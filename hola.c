@@ -2,7 +2,7 @@
 
 int main(int argc, char const *argv[])
 {
-  printf("Hola Mundo GitHub");
+  printf("Hola Mundo GitHub :)");
   
   return 0;
 }
