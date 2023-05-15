@@ -47,3 +47,6 @@ int Cuenta(int *Arreglo, int size, int numero)
 	return cont;
 }
 
+void Despliega_posiciones(int *Arreglo, int size, int num)
+{
+}
