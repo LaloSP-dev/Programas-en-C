@@ -49,4 +49,11 @@ int Cuenta(int *Arreglo, int size, int numero)
 
 void Despliega_posiciones(int *Arreglo, int size, int num)
 {
+	int posicion;
+
+	printf("Posiciones donde se encuentra el numero %d:\n", num);
+
+	for (i = 0; i < size; i++)
+		if (Arreglo[i] == num)
+			printf("%d ", i);
 }
