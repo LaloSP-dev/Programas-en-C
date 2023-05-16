@@ -1,2 +1,2 @@
-# Fundamentos de Programación.
-Practicas de programas en C.
+# Programas en C.
+Ejercicios de programación hechos en el lenguaje C.
