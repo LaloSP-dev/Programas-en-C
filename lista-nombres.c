@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX 10
 #define MAX_CAD 256
@@ -7,6 +8,8 @@
 typedef char cadena[MAX_CAD];
 
 int Menu();
+void Inertar(cadena *Nombres, int *size, int tam_max);
+void Desplegar(cadena *Nombres, int size);
 
 int main(int argc, char const *argv[])
 {
@@ -21,6 +24,7 @@ int main(int argc, char const *argv[])
 		switch(opcion) {
 
 			case 1:
+				Inertar(Nombres, &size, MAX);
 				break;
 
 			case 2:
@@ -30,6 +34,7 @@ int main(int argc, char const *argv[])
 				break;
 
 			case 4:
+				Desplegar(Nombres, size);
 				break;
 
 			case 5:
@@ -66,4 +71,58 @@ int Menu()
 	scanf("%d", & opcion);
 
 	return opcion;
+}
+
+void Inertar(cadena *Nombres, int *size, int tam_max)
+{
+	cadena name;
+	int posicion, i;
+
+	printf("\n------- Insertar Nombre -------\n");
+	if (*size == tam_max) {
+		printf("\nLa lista se encuentra llena...\n");
+	} else {
+		
+		printf("Ingresa un nombre: ");
+		scanf("%s", name);
+		printf("Ingresa la posicion: ");
+		scanf("%d", & posicion);
+
+		if (posicion < 0 || posicion > 9) {
+			printf("\nERROR...posicion no valida debe ser entre 0 y 9.\n");
+		} else {
+
+			if (posicion < *size) {
+
+				for (i = *size; i >= posicion; i--)
+					strcpy(Nombres[i], Nombres[i - 1]);
+
+				strcpy(Nombres[posicion], name);
+
+			} else {
+
+				if (posicion >= *size)
+					strcpy(Nombres[*size], name);
+
+			}
+
+			(*size)++;
+		}
+	}
+}
+
+void Desplegar(cadena *Nombres, int size)
+{
+	int i;
+
+	printf("\n------- Lista de Nombres -------\n");
+
+	if (size == 0)
+		printf("La lista de nombres esta vacia...\n");
+	else {
+
+		for (i = 0; i < size; i++)
+			printf("%d) %s\n", i, Nombres[i]);
+	
+	}
 }
