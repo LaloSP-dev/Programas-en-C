@@ -10,6 +10,7 @@ typedef char cadena[MAX_CAD];
 int Menu();
 void Inertar(cadena *Nombres, int *size, int tam_max);
 void Desplegar(cadena *Nombres, int size);
+void Eliminar(cadena *Nombres, int *size);
 
 int main(int argc, char const *argv[])
 {
@@ -28,6 +29,7 @@ int main(int argc, char const *argv[])
 				break;
 
 			case 2:
+				Eliminar(Nombres, &size);
 				break;
 
 			case 3:
@@ -107,6 +109,8 @@ void Inertar(cadena *Nombres, int *size, int tam_max)
 			}
 
 			(*size)++;
+
+			printf("\nEL nombre <<%s>> fue introducido\n", name);
 		}
 	}
 }
@@ -125,4 +129,42 @@ void Desplegar(cadena *Nombres, int size)
 			printf("%d) %s\n", i, Nombres[i]);
 	
 	}
+}
+
+void Eliminar(cadena *Nombres, int *size)
+{
+	int posicion, conf, opcion, i;
+
+	printf("\n------- Eliminar Nombre -------\n");
+
+	if (*size > 0) {
+
+		printf("Da la posicion del nombre: ");
+		scanf("%d", & posicion);
+
+		if (posicion >= *size || posicion < 0)
+			printf("\nError...Posicion incorrecta\n");
+		else {
+
+			printf("\nSeguro que quieres borrar el nombre <<%s>>?\n", Nombres[posicion]);
+			printf("\t1) SI      2)NO\n");
+			printf("Opcion de Confirmacion: ");
+			scanf("%d", & opcion);
+
+			if(opcion < 1 || opcion > 2)
+				printf("\nError...Opcion no valida\n");
+			else {
+
+				for (i = posicion; i < *size; i++) 
+					strcpy(Nombres[i], Nombres[i + 1]);
+
+				(*size)--;
+
+				printf("\nEliminacion exitosa\n");
+			}
+
+		}
+
+	} else
+		printf("\nNo hay nombres en el lista\n");
 }
