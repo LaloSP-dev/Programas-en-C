@@ -12,6 +12,7 @@ void Inertar(cadena *Nombres, int *size, int tam_max);
 void Desplegar(cadena *Nombres, int size);
 void Eliminar(cadena *Nombres, int *size);
 int Busca(cadena *Nombres, int size, cadena name);
+void Guardar_nombres_en_archivo_txt(cadena *Nombres, int size, cadena name_arch);
 
 int main(int argc, char const *argv[])
 {
@@ -52,6 +53,7 @@ int main(int argc, char const *argv[])
 				break;
 
 			case 5:
+				Guardar_nombres_en_archivo_txt(Nombres, size, "Lista de nombres.txt");
 				break;
 
 			case 6:
@@ -80,6 +82,7 @@ int Menu()
 	printf("2) Eliminar nombre\n");
 	printf("3) Buscar nombre\n");
 	printf("4) Lista de nombres\n");
+	printf("5) Guardar lista en archivo\n");
 	printf("7) Salir del programa\n");
 	printf("Opcion: ");
 	scanf("%d", & opcion);
@@ -98,7 +101,8 @@ void Inertar(cadena *Nombres, int *size, int tam_max)
 	} else {
 		
 		printf("Ingresa un nombre: ");
-		scanf("%s", name);
+		getc(stdin);
+		scanf("%[^\n]", name);
 		printf("Ingresa la posicion: ");
 		scanf("%d", & posicion);
 
@@ -145,7 +149,7 @@ void Desplegar(cadena *Nombres, int size)
 
 void Eliminar(cadena *Nombres, int *size)
 {
-	int posicion, conf, opcion, i;
+	int posicion, opcion, i;
 
 	printf("\n------- Eliminar Nombre -------\n");
 
@@ -165,16 +169,20 @@ void Eliminar(cadena *Nombres, int *size)
 
 			if(opcion < 1 || opcion > 2)
 				printf("\nError...Opcion no valida\n");
-			else {
-
-				for (i = posicion; i < *size; i++) 
+			else
+				if(opcion == 1) {
+					
+					for (i = posicion; i < *size; i++) 
 					strcpy(Nombres[i], Nombres[i + 1]);
 
-				(*size)--;
+					(*size)--;
 
-				printf("\nEliminacion exitosa\n");
-			}
-
+					printf("\nEliminacion exitosa\n");
+				
+				}
+				else
+					if(opcion == 2)
+						printf("\nEliminacion cancelada\n");
 		}
 
 	} else
@@ -191,4 +199,37 @@ int Busca(cadena *Nombres, int size, cadena name)
 		posicion++;
 
 	return posicion;
+}
+
+FILE *Abre_archivo(cadena name, cadena modo)
+{
+	FILE *ap = NULL;
+
+	ap = fopen(name, modo); /*Función en C para abrir un archivo*/
+
+	if(ap == NULL)
+		printf("\nERROR...No se pudo abrir el archivo %s\n", name);
+	else
+		printf("\nArchivo %s, Abierto exitosamente\n", name);
+
+	return ap;
+}
+
+/*Se vacia el archivo del arreglo en un archivo de texto*/
+void Guardar_nombres_en_archivo_txt(cadena *Nombres, int size, cadena name_arch)
+{
+	FILE *ap;
+	int i;
+
+	ap = Abre_archivo(name_arch, "w");
+
+	if(ap != NULL) {
+
+		fprintf(ap,"Lista de nombres:\n");
+		
+		for (i = 0; i < size; i++)
+			fprintf(ap, "%d) %s\n", i, Nombres[i]); /*Se escribe los nombres en el archivo*/
+
+		fclose(ap); /*Se cierra el archivo para que se guarde en disco*/
+	}
 }
