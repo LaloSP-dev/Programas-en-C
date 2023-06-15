@@ -13,6 +13,7 @@ void Desplegar(cadena *Nombres, int size);
 void Eliminar(cadena *Nombres, int *size);
 int Busca(cadena *Nombres, int size, cadena name);
 void Guardar_nombres_en_archivo_txt(cadena *Nombres, int size, cadena name_arch);
+void Lee_nombres_de_archivo_txt(cadena *Nombres, int *size, int tam_max, cadena name_arch);
 
 int main(int argc, char const *argv[])
 {
@@ -57,6 +58,7 @@ int main(int argc, char const *argv[])
 				break;
 
 			case 6:
+				Lee_nombres_de_archivo_txt(Nombres, &size, MAX, "Lista de nombres.txt");
 				break;
 
 			case 7:
@@ -83,6 +85,7 @@ int Menu()
 	printf("3) Buscar nombre\n");
 	printf("4) Lista de nombres\n");
 	printf("5) Guardar lista en archivo\n");
+	printf("6) Lee lista del archivo\n");
 	printf("7) Salir del programa\n");
 	printf("Opcion: ");
 	scanf("%d", & opcion);
@@ -224,11 +227,36 @@ void Guardar_nombres_en_archivo_txt(cadena *Nombres, int size, cadena name_arch)
 	ap = Abre_archivo(name_arch, "w");
 
 	if(ap != NULL) {
-
-		fprintf(ap,"Lista de nombres:\n");
 		
 		for (i = 0; i < size; i++)
-			fprintf(ap, "%d) %s\n", i, Nombres[i]); /*Se escribe los nombres en el archivo*/
+			fprintf(ap, "%s\n", Nombres[i]); /*Se escribe los nombres en el archivo*/
+
+		fclose(ap); /*Se cierra el archivo para que se guarde en disco*/
+	}
+}
+
+void Lee_nombres_de_archivo_txt(cadena *Nombres, int *size, int tam_max, cadena name_arch)
+{
+	FILE *ap;
+	cadena name;
+	char *apname;
+
+	ap = Abre_archivo(name_arch, "r"); /*Se abre para lectura de archivo de texto*/
+
+	if(ap != NULL) {
+
+		*size = 0;
+
+		apname = fgets(name, MAX_CAD, ap);
+
+		while(apname != NULL && *size < tam_max) {
+
+			name[strlen(name) - 1] = '\0';
+			strcpy(Nombres[*size], name);
+			(*size)++;
+			apname = fgets(name, 256, ap);
+
+		}
 
 		fclose(ap); /*Se cierra el archivo para que se guarde en disco*/
 	}
