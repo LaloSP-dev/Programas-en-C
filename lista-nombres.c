@@ -11,11 +11,12 @@ int Menu();
 void Inertar(cadena *Nombres, int *size, int tam_max);
 void Desplegar(cadena *Nombres, int size);
 void Eliminar(cadena *Nombres, int *size);
+int Busca(cadena *Nombres, int size, cadena name);
 
 int main(int argc, char const *argv[])
 {
-	int size, opcion;
-	cadena Nombres[MAX];
+	int size, opcion, pos;
+	cadena Nombres[MAX], name;
 
 	size = 0;
 
@@ -33,6 +34,17 @@ int main(int argc, char const *argv[])
 				break;
 
 			case 3:
+				printf("\n------- Buscar nombre -------\n");
+				printf("\nDa un nombre a buscar en el arreglo: ");
+				getc(stdin);
+				scanf("%[^\n]", name);
+
+				pos = Busca(Nombres, size, name);
+
+				if(pos == size)
+					printf("\nEl nombre <<%s>> no se encuentra en el arreglo\n",name);
+				else
+					printf("\nEl nombre <<%s>> si se encuentra en la posicion %d del arreglo\n",name,pos);
 				break;
 
 			case 4:
@@ -167,4 +179,16 @@ void Eliminar(cadena *Nombres, int *size)
 
 	} else
 		printf("\nNo hay nombres en el lista\n");
+}
+
+int Busca(cadena *Nombres, int size, cadena name)
+{
+	int posicion;
+
+	posicion = 0;
+
+	while (strcmp(Nombres[posicion], name) != 0 && posicion < size)
+		posicion++;
+
+	return posicion;
 }
