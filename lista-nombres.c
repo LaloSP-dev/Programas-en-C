@@ -235,6 +235,7 @@ void Guardar_nombres_en_archivo_txt(cadena *Nombres, int size, cadena name_arch)
 	}
 }
 
+/*Lee el archivo txt*/
 void Lee_nombres_de_archivo_txt(cadena *Nombres, int *size, int tam_max, cadena name_arch)
 {
 	FILE *ap;
