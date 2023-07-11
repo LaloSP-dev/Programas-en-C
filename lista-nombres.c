@@ -22,55 +22,57 @@ int main(int argc, char const *argv[])
 
 	size = 0;
 
-	do {
+	do
+	{
 		opcion = Menu();
 
-		switch(opcion) {
+		switch (opcion)
+		{
 
-			case 1:
-				Inertar(Nombres, &size, MAX);
-				break;
+		case 1:
+			Inertar(Nombres, &size, MAX);
+			break;
 
-			case 2:
-				Eliminar(Nombres, &size);
-				break;
+		case 2:
+			Eliminar(Nombres, &size);
+			break;
 
-			case 3:
-				printf("\n------- Buscar nombre -------\n");
-				printf("\nDa un nombre a buscar en el arreglo: ");
-				getc(stdin);
-				scanf("%[^\n]", name);
+		case 3:
+			printf("\n------- Buscar nombre -------\n");
+			printf("\nDa un nombre a buscar en el arreglo: ");
+			getc(stdin);
+			scanf("%[^\n]", name);
 
-				pos = Busca(Nombres, size, name);
+			pos = Busca(Nombres, size, name);
 
-				if(pos == size)
-					printf("\nEl nombre <<%s>> no se encuentra en el arreglo\n",name);
-				else
-					printf("\nEl nombre <<%s>> si se encuentra en la posicion %d del arreglo\n",name,pos);
-				break;
+			if (pos == size)
+				printf("\nEl nombre <<%s>> no se encuentra en el arreglo\n", name);
+			else
+				printf("\nEl nombre <<%s>> si se encuentra en la posicion %d del arreglo\n", name, pos);
+			break;
 
-			case 4:
-				Desplegar(Nombres, size);
-				break;
+		case 4:
+			Desplegar(Nombres, size);
+			break;
 
-			case 5:
-				Guardar_nombres_en_archivo_txt(Nombres, size, "Lista de nombres.txt");
-				break;
+		case 5:
+			Guardar_nombres_en_archivo_txt(Nombres, size, "Lista de nombres.txt");
+			break;
 
-			case 6:
-				Lee_nombres_de_archivo_txt(Nombres, &size, MAX, "Lista de nombres.txt");
-				break;
+		case 6:
+			Lee_nombres_de_archivo_txt(Nombres, &size, MAX, "Lista de nombres.txt");
+			break;
 
-			case 7:
-				printf("\nFin del programa...%cAdios!", 173);
-				break;
+		case 7:
+			printf("\nFin del programa...%cAdios!\n\n", 173);
+			break;
 
-			default:
-				break;
+		default:
+			break;
 		}
 
 	} while (opcion != 7);
-	
+
 	return 0;
 }
 
@@ -88,7 +90,7 @@ int Menu()
 	printf("6) Lee lista del archivo\n");
 	printf("7) Salir del programa\n");
 	printf("Opcion: ");
-	scanf("%d", & opcion);
+	scanf("%d", &opcion);
 
 	return opcion;
 }
@@ -99,32 +101,39 @@ void Inertar(cadena *Nombres, int *size, int tam_max)
 	int posicion, i;
 
 	printf("\n------- Insertar Nombre -------\n");
-	if (*size == tam_max) {
+	if (*size == tam_max)
+	{
 		printf("\nLa lista se encuentra llena...\n");
-	} else {
-		
+	}
+	else
+	{
+
 		printf("Ingresa un nombre: ");
 		getc(stdin);
 		scanf("%[^\n]", name);
 		printf("Ingresa la posicion: ");
-		scanf("%d", & posicion);
+		scanf("%d", &posicion);
 
-		if (posicion < 0 || posicion > 9) {
+		if (posicion < 0 || posicion > 9)
+		{
 			printf("\nERROR...posicion no valida debe ser entre 0 y 9.\n");
-		} else {
+		}
+		else
+		{
 
-			if (posicion < *size) {
+			if (posicion < *size)
+			{
 
 				for (i = *size; i >= posicion; i--)
 					strcpy(Nombres[i], Nombres[i - 1]);
 
 				strcpy(Nombres[posicion], name);
-
-			} else {
+			}
+			else
+			{
 
 				if (posicion >= *size)
 					strcpy(Nombres[*size], name);
-
 			}
 
 			(*size)++;
@@ -142,11 +151,11 @@ void Desplegar(cadena *Nombres, int size)
 
 	if (size == 0)
 		printf("La lista de nombres esta vacia...\n");
-	else {
+	else
+	{
 
 		for (i = 0; i < size; i++)
 			printf("%d) %s\n", i, Nombres[i]);
-	
 	}
 }
 
@@ -156,39 +165,39 @@ void Eliminar(cadena *Nombres, int *size)
 
 	printf("\n------- Eliminar Nombre -------\n");
 
-	if (*size > 0) {
+	if (*size > 0)
+	{
 
 		printf("Da la posicion del nombre: ");
-		scanf("%d", & posicion);
+		scanf("%d", &posicion);
 
 		if (posicion >= *size || posicion < 0)
 			printf("\nError...Posicion incorrecta\n");
-		else {
+		else
+		{
 
 			printf("\nSeguro que quieres borrar el nombre <<%s>>?\n", Nombres[posicion]);
 			printf("\t1) SI      2)NO\n");
 			printf("Opcion de Confirmacion: ");
-			scanf("%d", & opcion);
+			scanf("%d", &opcion);
 
-			if(opcion < 1 || opcion > 2)
+			if (opcion < 1 || opcion > 2)
 				printf("\nError...Opcion no valida\n");
-			else
-				if(opcion == 1) {
-					
-					for (i = posicion; i < *size; i++) 
+			else if (opcion == 1)
+			{
+
+				for (i = posicion; i < *size; i++)
 					strcpy(Nombres[i], Nombres[i + 1]);
 
-					(*size)--;
+				(*size)--;
 
-					printf("\nEliminacion exitosa\n");
-				
-				}
-				else
-					if(opcion == 2)
-						printf("\nEliminacion cancelada\n");
+				printf("\nEliminacion exitosa\n");
+			}
+			else if (opcion == 2)
+				printf("\nEliminacion cancelada\n");
 		}
-
-	} else
+	}
+	else
 		printf("\nNo hay nombres en el lista\n");
 }
 
@@ -210,7 +219,7 @@ FILE *Abre_archivo(cadena name, cadena modo)
 
 	ap = fopen(name, modo); /*Función en C para abrir un archivo*/
 
-	if(ap == NULL)
+	if (ap == NULL)
 		printf("\nERROR...No se pudo abrir el archivo %s\n", name);
 	else
 		printf("\nArchivo %s, Abierto exitosamente\n", name);
@@ -226,8 +235,9 @@ void Guardar_nombres_en_archivo_txt(cadena *Nombres, int size, cadena name_arch)
 
 	ap = Abre_archivo(name_arch, "w");
 
-	if(ap != NULL) {
-		
+	if (ap != NULL)
+	{
+
 		for (i = 0; i < size; i++)
 			fprintf(ap, "%s\n", Nombres[i]); /*Se escribe los nombres en el archivo*/
 
@@ -244,19 +254,20 @@ void Lee_nombres_de_archivo_txt(cadena *Nombres, int *size, int tam_max, cadena 
 
 	ap = Abre_archivo(name_arch, "r"); /*Se abre para lectura de archivo de texto*/
 
-	if(ap != NULL) {
+	if (ap != NULL)
+	{
 
 		*size = 0;
 
 		apname = fgets(name, MAX_CAD, ap);
 
-		while(apname != NULL && *size < tam_max) {
+		while (apname != NULL && *size < tam_max)
+		{
 
 			name[strlen(name) - 1] = '\0';
 			strcpy(Nombres[*size], name);
 			(*size)++;
 			apname = fgets(name, 256, ap);
-
 		}
 
 		fclose(ap); /*Se cierra el archivo para que se guarde en disco*/
