@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define MAX_CAD 256
+
+typedef char cadena[MAX_CAD];
+
 float **crea_matriz_float(int rengs, int cols);
 float *crea_arreglo_float(int size);
 float rand_float_entre_0_y_1(int num_dec);
@@ -9,6 +13,9 @@ void Inicializa_Aleatorio(float **Matriz, int rengs, int cols);
 void Despliega_Matriz(float **Matriz, int rengs, int cols);
 void suma_renglones(float **Matriz, float *Arreglo, int rengs, int cols);
 void Despliega_Arreglo(float *Arreglo, int size);
+FILE *Abre_Archivo(cadena name, cadena modo);
+void escribe_matriz_en_archivo_txt(float **Matriz, int rengs, int cols, cadena name);
+void escribe_matriz_a_archivo_bin(float **Matriz, int rengs, int cols, cadena name);
 
 int main(int argc, char const *argv[])
 {
@@ -26,6 +33,8 @@ int main(int argc, char const *argv[])
 
 	Matriz = crea_matriz_float(rengs, cols);
 	Inicializa_Aleatorio(Matriz, rengs, cols);
+	escribe_matriz_en_archivo_txt(Matriz, rengs, cols, "DatosMatriz.txt");
+	escribe_matriz_a_archivo_bin(Matriz, rengs, cols, "DatosMatriz.bin");
 	Despliega_Matriz(Matriz, rengs, cols);
 
 	Arreglo = crea_arreglo_float(rengs);
@@ -161,4 +170,79 @@ void Despliega_Arreglo(float *Arreglo, int size)
 		printf("%5.1f ", Arreglo[i]);
 
 	printf("\n\n");
+}
+
+/**
+ * @brief Se encarga de abrir un archivo
+ *
+ * invoca a la instrucción fopen
+ *
+ * @param name - Nombre del archivo
+ * @param modo - Modo de apertura
+ * @return FILE*
+ */
+FILE *Abre_Archivo(cadena name, cadena modo)
+{
+	FILE *ap = NULL;
+
+	ap = fopen(name, modo);
+
+	if (ap == NULL)
+		printf("\nERROR...no se pudo abrir el archivo %s\n", name);
+	else
+		printf("\nArchivo %s abierto exitosamente\n", name);
+
+	return ap;
+}
+
+/**
+ * @brief Escribe la matriz en un archivo de texto
+ *
+ * @param Matriz
+ * @param rengs
+ * @param cols
+ * @param name
+ */
+void escribe_matriz_en_archivo_txt(float **Matriz, int rengs, int cols, cadena name)
+{
+	FILE *ap;
+	int r, c;
+
+	ap = Abre_Archivo(name, "w"); // se abre para escritura de modo texto
+
+	if (ap != NULL)
+	{
+		fprintf(ap, "%d %d\n", rengs, cols);
+
+		for (r = 0; r < rengs; r++)
+		{
+			for (c = 0; c < cols; c++)
+				fprintf(ap, "%5.1f", Matriz[r][c]);
+			fprintf(ap, "\n");
+		}
+		fclose(ap); // se cierra el archivo para que se guarde en disco
+	}
+}
+
+/**
+ * @brief Escribe la matriz en un archivo binario
+ *
+ * @param Matriz
+ * @param rengs
+ * @param cols
+ * @param name
+ */
+void escribe_matriz_a_archivo_bin(float **Matriz, int rengs, int cols, cadena name)
+{
+	FILE *ap;
+
+	ap = Abre_Archivo(name, "wb");
+
+	if (ap != NULL)
+	{
+		fwrite(&rengs, sizeof(int), 1, ap);				  // se escribe el numero de renglones
+		fwrite(&cols, sizeof(int), 1, ap);				  // se escribe el numero de columnas
+		fwrite(&Matriz, sizeof(float), rengs * cols, ap); // se escribe directamente toda la matriz
+		fclose(ap);										  // se cierrael archivo para que se guarde en disco
+	}
 }
