@@ -8,15 +8,20 @@ typedef char cadena[MAX_CAD];
 
 float **crea_matriz_float(int rengs, int cols);
 void Despliega_Matriz(float **Matriz, int rengs, int cols);
+FILE *Abre_Archivo(cadena name, cadena modo);
 float **lee_matriz_de_archivo_txt(int *rengs, int *cols, cadena name);
+float **lee_matriz_de_archivo_bin(int *rengs, int *cols, cadena name);
 
 int main(int argc, char const *argv[])
 {
-    float **Matriz;
+    float **Matriz, **Matriz2;
     int rengs = 0, cols = 0;
 
     Matriz = lee_matriz_de_archivo_txt(&rengs, &cols, "DatosMatriz.txt");
     Despliega_Matriz(Matriz, rengs, cols);
+
+    Matriz2 = lee_matriz_de_archivo_bin(&rengs, &cols, "DatosMatriz.bin");
+    Despliega_Matriz(Matriz2, rengs, cols);
 
     return 0;
 }
@@ -87,6 +92,14 @@ FILE *Abre_Archivo(cadena name, cadena modo)
     return ap;
 }
 
+/**
+ * @brief Abre el archivo txt para lectura
+ *
+ * @param rengs
+ * @param cols
+ * @param name
+ * @return float**
+ */
 float **lee_matriz_de_archivo_txt(int *rengs, int *cols, cadena name)
 {
     FILE *ap;
@@ -107,6 +120,28 @@ float **lee_matriz_de_archivo_txt(int *rengs, int *cols, cadena name)
                 fscanf(ap, "%f", &(Matriz[r][c]));
 
         fclose(ap);
+    }
+
+    return Matriz;
+}
+
+float **lee_matriz_de_archivo_bin(int *rengs, int *cols, cadena name)
+{
+    FILE *ap;
+    float **Matriz;
+
+    ap = Abre_Archivo(name, "rb"); // se abre para lectura modo binario
+
+    if (ap != NULL)
+    {
+        fread(rengs, sizeof(int), 1, ap); // se lee número de renglones
+        fread(cols, sizeof(int), 1, ap);  // se lee número de columnas
+
+        Matriz = crea_matriz_float(*rengs, *cols);
+
+        fread(*Matriz, sizeof(float), *rengs * *cols, ap); // se leen todos los bytes de la matriz
+
+        fclose(ap); // se cierra el archivo
     }
 
     return Matriz;

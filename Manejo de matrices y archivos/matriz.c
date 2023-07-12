@@ -242,7 +242,7 @@ void escribe_matriz_a_archivo_bin(float **Matriz, int rengs, int cols, cadena na
 	{
 		fwrite(&rengs, sizeof(int), 1, ap);				  // se escribe el numero de renglones
 		fwrite(&cols, sizeof(int), 1, ap);				  // se escribe el numero de columnas
-		fwrite(&Matriz, sizeof(float), rengs * cols, ap); // se escribe directamente toda la matriz
+		fwrite(*Matriz, sizeof(float), rengs * cols, ap); // se escribe directamente toda la matriz
 		fclose(ap);										  // se cierrael archivo para que se guarde en disco
 	}
 }
