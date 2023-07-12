@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
@@ -14,9 +14,11 @@ int main(int argc, char const *argv[])
 	scanf("%d", &numero);
 	printf("\nLos divisores de %d son:\n", numero);
 
-	do {
+	do
+	{
 
-		if(numero % divisores == 0) {
+		if (numero % divisores == 0)
+		{
 
 			printf("%d ", divisores);
 			cont++;

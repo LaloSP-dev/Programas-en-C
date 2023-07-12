@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void maximo_comun_divisor(int A, int B);
 
@@ -18,7 +18,6 @@ int main(int argc, char const *argv[])
 	return 0;
 }
 
-
 void maximo_comun_divisor(int A, int B)
 {
 	int aux, *apA, *apB;
@@ -34,20 +33,20 @@ void maximo_comun_divisor(int A, int B)
 
 	/*Código para calcular el maximo comun divisor*/
 
-	if(A < B) {
+	if (A < B)
+	{
 
 		aux = A;
 		A = B;
 		B = aux;
-
 	}
 
-	while(A % B != 0) {
+	while (A % B != 0)
+	{
 
 		aux = A;
 		A = B;
 		B = aux % B;
-
 	}
 
 	printf("El MCD es: %d\n", B);

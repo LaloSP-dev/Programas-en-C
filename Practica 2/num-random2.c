@@ -23,9 +23,10 @@ int main(int argc, char const *argv[])
 	Despliega_arreglo(Numeros, NUM_ELEMS, "Arreglo con valores entre 20 y 30\n");
 
 	printf("Da un numero a buscar en el arreglo: ");
-	scanf("%d", & numero);
+	scanf("%d", &numero);
 
-	if (Busca(Numeros, NUM_ELEMS, numero) < NUM_ELEMS) {
+	if (Busca(Numeros, NUM_ELEMS, numero) < NUM_ELEMS)
+	{
 
 		printf("\nEl numero %d aparece %d en el arreglo\n", numero, Cuenta(Numeros, NUM_ELEMS, numero));
 		printf("\n");
@@ -33,8 +34,9 @@ int main(int argc, char const *argv[])
 		Despliega_posiciones(Numeros, NUM_ELEMS, numero);
 
 		printf("\nEl numero %d aparece por primera vez en la posicion: %d\n", numero, Busca(Numeros, NUM_ELEMS, numero));
-	
-	} else {
+	}
+	else
+	{
 		printf("\nEl numero %d no existe en el arreglo\n", numero);
 	}
 
@@ -57,7 +59,6 @@ void Despliega_arreglo(int *Arreglo, int size, cadena mensaje)
 
 	for (i = 0; i < size; i++)
 		printf("%d ", Arreglo[i]);
-
 }
 
 int Cuenta(int *Arreglo, int size, int numero)
@@ -67,7 +68,7 @@ int Cuenta(int *Arreglo, int size, int numero)
 	cont = 0;
 
 	for (i = 0; i < size; i++)
-		if(Arreglo[i] == numero)
+		if (Arreglo[i] == numero)
 			cont = cont + 1;
 
 	return cont;
@@ -84,7 +85,7 @@ void Despliega_posiciones(int *Arreglo, int size, int num)
 			printf("%d ", i);
 }
 
-int Busca(int *Arreglo, int size, int num) 
+int Busca(int *Arreglo, int size, int num)
 {
 	int i;
 

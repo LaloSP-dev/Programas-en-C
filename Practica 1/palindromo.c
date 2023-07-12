@@ -16,11 +16,11 @@ int main(int argc, char const *argv[])
 	inicio = 0;
 	fin = strlen(frase) - 1;
 
-	while(inicio <= fin && frase[inicio] == frase[fin]) {
+	while (inicio <= fin && frase[inicio] == frase[fin])
+	{
 
 		inicio++;
 		fin--;
-
 	}
 
 	if (inicio > fin)

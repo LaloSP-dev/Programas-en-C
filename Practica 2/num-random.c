@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 	int Datos[MAX];
 
 	srand(time(NULL));
-	
+
 	Inicializa_arreglo(Numeros, NUM_ELEMS, 101);
 	Despliega_arreglo(Numeros, NUM_ELEMS, "Arreglo con valores entre 0 y 100");
 
@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
 	return 0;
 }
 
-void Inicializa_arreglo(int *Arreglo, int size, int max_valor) 
+void Inicializa_arreglo(int *Arreglo, int size, int max_valor)
 {
 	int i;
 
@@ -40,7 +40,7 @@ void Despliega_arreglo(int *Arreglo, int size, cadena mensaje)
 	int i;
 
 	printf("%s\n", mensaje);
-	
+
 	/*Se despliega el arreglo ya inicializado con numeros aleatorios*/
 	for (i = 0; i < size; i++)
 		printf("%d ", Arreglo[i]);
