@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
@@ -9,12 +9,13 @@ int main(int argc, char const *argv[])
 	printf("Programa que calcula el total de numeros introducidos\n");
 	printf("\nDa varios numeros y para terminar da un 0:\n");
 
-	do {
+	do
+	{
 
 		scanf("%d", &numero);
 		contador++;
 
-	} while(numero != 0);
+	} while (numero != 0);
 
 	printf("\nTotal de numeros introducidos: %d", contador);
 
