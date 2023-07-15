@@ -64,14 +64,15 @@ float rand_float_entre_0_y_1(int num_dec)
 /**
  * @brief Despliega los datos del registro
  *
- * Buscar una manera de acomodar los datos
+ * -15 -> indica que se debe asignar un ancho de campo de 15 caracteres para el valor
+ * El uso del signi '-' indica que el campo debe aliniarse a la izquierda
  *
  * @param vaca
  */
 void Despliega_un_registro(Tipo_vaca vaca)
 {
 
-    printf("%7d        \t%7s       \t%d     \t%8.2f\n", vaca.num_pac, vaca.nombre, vaca.edad, vaca.produc);
+    printf("%-15d%-15s%-15d%-15.2f\n", vaca.num_pac, vaca.nombre, vaca.edad, vaca.produc);
 }
 
 void inicializa_arreglo_de_registros(Tipo_vaca *vacas)
@@ -87,7 +88,7 @@ void despliega_arreglo_de_registros(Tipo_vaca *vacas)
     int i;
 
     printf("\nInformacion del GANADO\n");
-    printf("No. Paciente       Nombre       Edad       Productividad\n");
+    printf("%-15s%-15s%-15s%-15s\n", "No.Paciente", "Nombre", "Edad", "Productividad");
     for (i = 0; i < MAX_VACAS; i++)
         Despliega_un_registro(vacas[i]);
 }
