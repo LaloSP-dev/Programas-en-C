@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 #define MAX_CAD 256
 #define MAX_VACAS 2
@@ -20,6 +21,7 @@ float rand_float_entre_0_y_1(int num_dec);
 void Despliega_un_registro(Tipo_vaca vaca);
 void inicializa_arreglo_de_registros(Tipo_vaca *vacas);
 void despliega_arreglo_de_registros(Tipo_vaca *vacas);
+void ordena_arreglo_nombre(Tipo_vaca *vacas, int size);
 
 int main(int argc, char const *argv[])
 {
@@ -28,6 +30,8 @@ int main(int argc, char const *argv[])
     srand(time(NULL));
 
     inicializa_arreglo_de_registros(Ganado);
+    despliega_arreglo_de_registros(Ganado);
+    ordena_arreglo_nombre(Ganado, MAX_VACAS);
     despliega_arreglo_de_registros(Ganado);
 
     return 0;
@@ -91,4 +95,31 @@ void despliega_arreglo_de_registros(Tipo_vaca *vacas)
     printf("%-15s%-15s%-15s%-15s\n", "No.Paciente", "Nombre", "Edad", "Productividad");
     for (i = 0; i < MAX_VACAS; i++)
         Despliega_un_registro(vacas[i]);
+}
+
+/**
+ * @brief Metodo de ordenamiento Burbuja
+ *
+ * Ordena el Registro por orden alfabetico
+ *
+ * @param vacas
+ * @param size
+ */
+void ordena_arreglo_nombre(Tipo_vaca *vacas, int size)
+{
+    int i, base;
+    Tipo_vaca aux;
+
+    for (i = 0; i < size - 1; i++)
+        for (base = 0; base < size - 1; base++)
+        {
+            if (strcmp(vacas[base].nombre, vacas[base + 1].nombre) > 0)
+            {
+                aux = vacas[base];
+                vacas[base] = vacas[base + 1];
+                vacas[base + 1] = aux;
+            }
+        }
+
+    printf("\nOrdenado exitosamente\n");
 }
