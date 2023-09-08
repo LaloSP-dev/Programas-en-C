@@ -11,21 +11,21 @@ typedef char cadena[MAX_CAD];
 
 typedef struct
 {
-    int distancia;
-    int segs;
+	int distancia;
+	int segs;
 } Tcarrera;
 
 typedef struct
 {
-    cadena name;
-    unsigned int edad;
-    Tcarrera tiempos[NC];
+	cadena name;
+	unsigned int edad;
+	Tcarrera tiempos[NC];
 } Tcorredor;
 
 typedef struct
 {
-    Tcorredor Corredores[MAX];
-    int size;
+	Tcorredor Corredores[MAX];
+	int size;
 } TSist_Atletas;
 
 int menu();
