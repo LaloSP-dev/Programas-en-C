@@ -1,0 +1,9 @@
+# Ignora ejecutables generados por compilaciones
+
+*.out
+*.exe
+
+#Ignorar archivos
+
+*.bin
+*.txt

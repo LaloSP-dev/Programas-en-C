@@ -28,11 +28,24 @@ typedef struct
 	int size;
 } TSist_Atletas;
 
+typedef struct
+{
+	int hrs;
+	int min;
+	int seg;
+} Ctime;
+
 int menu();
 void alta_corredores(TSist_Atletas *Atletas);
 int menu_consultas();
 int menuDistanciaCarreras();
 void despliegue_consultas(TSist_Atletas atletas);
 void atletaMejorTiempo(TSist_Atletas atletas);
+void listadoTiemposCorredor(TSist_Atletas atletas);
+void listadoTiemposCorredor(TSist_Atletas atletas);
+int buscarAtleta(TSist_Atletas atletas, cadena name);
+Ctime *formatoTiempo(TSist_Atletas atleta, int posicion);
+void nombresOrdenados(TSist_Atletas *atletas);
+void desplegarAtletas(TSist_Atletas atletas);
 
 #endif
