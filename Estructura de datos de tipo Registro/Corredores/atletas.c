@@ -18,11 +18,11 @@ int main(int argc, char const *argv[])
 		switch (opcion)
 		{
 		case 1:
-			alta_corredores(&Atletas);
+			altaCorredores(&Atletas);
 			break;
 
 		case 3:
-			despliegue_consultas(Atletas);
+			despliegueConsultas(Atletas);
 			break;
 
 		case 6:
@@ -55,7 +55,7 @@ int menu()
 	return opc;
 }
 
-int menu_consultas()
+int menuConsultas()
 {
 	int opc;
 
@@ -90,13 +90,13 @@ int menuDistanciaCarreras()
 	return opc;
 }
 
-void despliegue_consultas(TSist_Atletas atletas)
+void despliegueConsultas(TSist_Atletas atletas)
 {
 	int opcion;
 
 	do
 	{
-		opcion = menu_consultas();
+		opcion = menuConsultas();
 
 		switch (opcion)
 		{
@@ -105,18 +105,20 @@ void despliegue_consultas(TSist_Atletas atletas)
 			break;
 
 		case 2:
-			listadoTiemposCorredor(atletas);
+			listadoTiemposByAtleta(atletas);
 			break;
 
 		case 3:
 			nombresOrdenados(&atletas);
-			desplegarAtletas(atletas);
+			listadoAllAtletas(atletas);
 			break;
 
 		case 4:
+			listadoPromedioCarrerasOfAllAtletas(atletas);
 			break;
 
 		case 5:
+			listadoAtletasByEdad(atletas);
 			break;
 
 		case 6:
@@ -136,7 +138,7 @@ void despliegue_consultas(TSist_Atletas atletas)
  *
  * @param atletas
  */
-void alta_corredores(TSist_Atletas *atletas)
+void altaCorredores(TSist_Atletas *atletas)
 {
 	printf("\n---------- Altas Corredores ----------\n");
 
@@ -234,7 +236,7 @@ void atletaMejorTiempo(TSist_Atletas atletas)
  *
  * @param atletas
  */
-void listadoTiemposCorredor(TSist_Atletas atletas)
+void listadoTiemposByAtleta(TSist_Atletas atletas)
 {
 	cadena name;
 	Ctime *tiempos;
@@ -295,10 +297,10 @@ int buscarAtleta(TSist_Atletas atletas, cadena name)
 
 /**
  * @brief Pasa los tiempos de un corredor a un formato de hrs:min:seg
- * despues los imprime en consola
  *
  * @param atleta
  * @param posicion
+ * @return Ctime*
  */
 Ctime *formatoTiempo(TSist_Atletas atleta, int posicion)
 {
@@ -371,16 +373,22 @@ void nombresOrdenados(TSist_Atletas *atletas)
 		}
 }
 
-void desplegarAtletas(TSist_Atletas atletas)
+/**
+ * @brief Despliega toda la infromación de los atletas.
+ *
+ * @param atletas
+ */
+void listadoAllAtletas(TSist_Atletas atletas)
 {
 	Ctime *tiempos;
-			printf("\n---------- Lista de Informacion de los Atletas ----------\n");
+	printf("\n---------- Lista de Informacion de los Atletas ----------\n");
 
 	if (atletas.size > 0)
 	{
 		printf("\n%-20s%-20s%-20s%-20s\n", "Nombre", "Edad", "Carreras", "Tiempos");
 		printf("-------------------------------------------------------------------");
-		for (int i = 0; i < atletas.size; i++){
+		for (int i = 0; i < atletas.size; i++)
+		{
 
 			tiempos = formatoTiempo(atletas, i);
 
@@ -389,6 +397,117 @@ void desplegarAtletas(TSist_Atletas atletas)
 
 			free(tiempos);
 		}
+	}
+	else
+		printf("\nNo hay corredores dados de alta\n");
+}
+
+/**
+ * @brief Calcula el promedio de la relación distancia/tiempo de las carreras de un corredor
+ *
+ * @param carreras Arreglo de todas las carreras de un corredor
+ * @return float Promedio de carreras
+ */
+float promedioCarrerasByCorredor(Tcarrera *carreras)
+{
+	float promedioByCarrera, promedioAllCarreras;
+
+	promedioByCarrera = 0.0;
+	promedioAllCarreras = 0.0;
+
+	for (int i = 0; i < NC; i++)
+		promedioByCarrera = promedioByCarrera + ((float)carreras[i].distancia / (float)carreras[i].segs);
+
+	promedioAllCarreras = promedioByCarrera / NC;
+
+	return promedioAllCarreras;
+}
+
+/**
+ * @brief Muestra el listado dela información de todos los corredores con el promedio 
+ * en relación de sus carreras
+ * 
+ * @param atletas 
+ */
+void listadoPromedioCarrerasOfAllAtletas(TSist_Atletas atletas)
+{
+	float promedioByCorredor;
+
+	promedioByCorredor = 0.0;
+
+	printf("\n---------- Lista de Informacion de los Atletas con su Promedio ----------\n");
+
+	if (atletas.size > 0)
+	{
+		printf("\n%-20s%-20s%-20s\n", "Nombre", "Edad", "Promedio");
+		printf("------------------------------------------------");
+
+		for (int i = 0; i < atletas.size; i++)
+		{
+			promedioByCorredor = promedioCarrerasByCorredor(atletas.Corredores[i].tiempos);
+
+			printf("\n%-20s%-20d%-20.2f\n", atletas.Corredores[i].name, atletas.Corredores[i].edad, promedioByCorredor);
+		}
+		
+	}
+	else
+		printf("\nNo hay corredores dados de alta\n");
+}
+
+/**
+ * @brief Muestra el listado de los corredores que se encuentren entre un intervalo de edades
+ * 
+ * @param atletas 
+ */
+void listadoAtletasByEdad(TSist_Atletas atletas)
+{
+	int edadMin, edadMax, cont;
+	float promedioByCorredor;
+
+	edadMin = 0;
+	edadMax = 0;
+	cont = 0;
+
+	printf("\n---------- Lista de Informacion de los Atletas en un Intevalo de Edades ----------\n");
+
+	if (atletas.size > 0)
+	{
+		printf("Introduce el intervao de edades:\n");
+		printf("Edad Minima: ");
+		scanf("%d", &edadMin);
+		printf("Edad Maxima: ");
+		scanf("%d", &edadMax);
+
+		if (edadMin > edadMax)
+		{
+			printf("\nError...El intervalo de edades no es permitido\n");
+		}
+		else
+		{
+			printf("\n%-20s%-20s%-20s\n", "Nombre", "Edad", "Promedio");
+			printf("------------------------------------------------");
+
+			for (int i = 0; i < atletas.size; i++)
+			{
+				if (atletas.Corredores[i].edad >= edadMin && atletas.Corredores[i].edad <= edadMax)
+				{
+					cont++;
+
+					promedioByCorredor = promedioCarrerasByCorredor(atletas.Corredores[i].tiempos);
+
+					printf("\n%-20s%-20d%-20.2f\n", atletas.Corredores[i].name, atletas.Corredores[i].edad, promedioByCorredor);
+				}
+			}
+
+			if (cont == 0)
+			{
+				printf("\nNo se encotro corredores en el intervalo de edad [%d, %d]\n", edadMin, edadMax);
+			}
+			
+			
+		}
+		
+		
 	}
 	else
 		printf("\nNo hay corredores dados de alta\n");

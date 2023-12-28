@@ -2,6 +2,7 @@
 #define ATLETAS_CORREDORES
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAX_CAD 256
 #define MAX 200
@@ -36,16 +37,19 @@ typedef struct
 } Ctime;
 
 int menu();
-void alta_corredores(TSist_Atletas *Atletas);
-int menu_consultas();
+void altaCorredores(TSist_Atletas *Atletas);
+int menuConsultas();
 int menuDistanciaCarreras();
-void despliegue_consultas(TSist_Atletas atletas);
+void despliegueConsultas(TSist_Atletas atletas);
 void atletaMejorTiempo(TSist_Atletas atletas);
-void listadoTiemposCorredor(TSist_Atletas atletas);
-void listadoTiemposCorredor(TSist_Atletas atletas);
+void listadoTiemposByAtleta(TSist_Atletas atletas);
+void listadoTiemposByAtleta(TSist_Atletas atletas);
 int buscarAtleta(TSist_Atletas atletas, cadena name);
 Ctime *formatoTiempo(TSist_Atletas atleta, int posicion);
 void nombresOrdenados(TSist_Atletas *atletas);
-void desplegarAtletas(TSist_Atletas atletas);
+void listadoAllAtletas(TSist_Atletas atletas);
+float promedioCarrerasByCorredor(Tcarrera *carreras);
+void listadoPromedioCarrerasOfAllAtletas(TSist_Atletas atletas);
+void listadoAtletasByEdad(TSist_Atletas atletas);
 
 #endif
