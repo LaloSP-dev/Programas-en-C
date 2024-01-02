@@ -54,6 +54,6 @@ void listadoAtletasByEdad(TSist_Atletas atletas);
 void bajasAtletasByNombre(TSist_Atletas *atletas);
 FILE *abrirArchivo(cadena name, cadena modo);
 void crearArchivoTxt(TSist_Atletas atletas, cadena name);
-void crearArchivoTxt(TSist_Atletas atletas, cadena name);
+void leerArchivoTxt(TSist_Atletas *atletas, cadena name);
 
 #endif

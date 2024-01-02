@@ -32,6 +32,10 @@ int main(int argc, char const *argv[])
 		case 4:
 			crearArchivoTxt(Atletas, "Lista_Corredores.txt");
 			break;
+		
+		case 5:
+			leerArchivoTxt(&Atletas, "Lista_Corredores.txt");
+			break;
 
 		case 6:
 			printf("\nFin del programa...Adios\n");
@@ -429,7 +433,7 @@ float promedioCarrerasByCorredor(Tcarrera *carreras)
 }
 
 /**
- * @brief Muestra el listado dela información de todos los corredores con el promedio 
+ * @brief Muestra el listado de la información de todos los corredores con el promedio 
  * en relación de sus carreras
  * 
  * @param atletas 
@@ -547,7 +551,7 @@ void bajasAtletasByNombre(TSist_Atletas *atletas)
 }
 
 /**
- * @brief 
+ * @brief Función para abrir un archivo
  * 
  * @param name 
  * @param modo 
@@ -568,7 +572,7 @@ FILE *abrirArchivo(cadena name, cadena modo)
 }
 
 /**
- * @brief 
+ * @brief Función para guardar los datos de los Corredores en un archivo txt
  * 
  * @param atletas 
  * @param name 
@@ -584,15 +588,41 @@ void crearArchivoTxt(TSist_Atletas atletas, cadena name)
 		fprintf(ap, "Total de Corredores: ");
 		fprintf(ap, "%d", atletas.size);
 		fprintf(ap, "\n%-20s%-20s%-20s%-20s\n", "Nombre", "Edad", "Carreras", "Tiempos");
-		fprintf(ap, "-------------------------------------------------------------------");
+		fprintf(ap, "-------------------------------------------------------------------\n");
 
 		for (int i = 0; i < atletas.size; i++)
-		{
 			for (int j = 0; j < NC; j++)
-				fprintf(ap, "\n%-20s%-20d%-20d%d\n", atletas.Corredores[i].name, atletas.Corredores[i].edad, atletas.Corredores[i].tiempos[j].distancia, atletas.Corredores[i].tiempos[j].segs);
-		}
+				fprintf(ap, "%-20s%-20d%-20d%d\n", atletas.Corredores[i].name, atletas.Corredores[i].edad, atletas.Corredores[i].tiempos[j].distancia, atletas.Corredores[i].tiempos[j].segs);
+
+		fclose(ap);
+	}	
+}
+
+/**
+ * @brief Función que lee un archivo creado posteriormente y carga los datos del archivo creado
+ * 
+ * @param atletas 
+ */
+void leerArchivoTxt(TSist_Atletas *atletas, cadena name)
+{
+	FILE *ap;
+
+	cadena aux, colNombre, colEdad, colCarreras, colTiempos;
+	int size;
+
+	ap = abrirArchivo(name, "r");
+
+	if (ap != NULL)
+	{
+		fscanf(ap, "Total de Corredores: %d", &size);
+		atletas->size = size;
+		fscanf(ap, "%s%s%s%s", colNombre, colEdad, colCarreras, colTiempos);
+		fscanf(ap, "%s", aux);
+
+		for (int i = 0; i < atletas->size; i++)
+			for (int j = 0; j < NC; j++)
+				fscanf(ap, "%s%d%d%d", atletas->Corredores[i].name, &atletas->Corredores[i].edad, &atletas->Corredores[i].tiempos[j].distancia, &atletas->Corredores[i].tiempos[j].segs);
 
 		fclose(ap);
 	}
-	
 }
