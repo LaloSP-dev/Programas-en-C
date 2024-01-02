@@ -51,5 +51,9 @@ void listadoAllAtletas(TSist_Atletas atletas);
 float promedioCarrerasByCorredor(Tcarrera *carreras);
 void listadoPromedioCarrerasOfAllAtletas(TSist_Atletas atletas);
 void listadoAtletasByEdad(TSist_Atletas atletas);
+void bajasAtletasByNombre(TSist_Atletas *atletas);
+FILE *abrirArchivo(cadena name, cadena modo);
+void crearArchivoTxt(TSist_Atletas atletas, cadena name);
+void crearArchivoTxt(TSist_Atletas atletas, cadena name);
 
 #endif

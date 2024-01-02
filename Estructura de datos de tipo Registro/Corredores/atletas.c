@@ -21,8 +21,16 @@ int main(int argc, char const *argv[])
 			altaCorredores(&Atletas);
 			break;
 
+		case 2:
+			bajasAtletasByNombre(&Atletas);
+			break;
+
 		case 3:
 			despliegueConsultas(Atletas);
+			break;
+
+		case 4:
+			crearArchivoTxt(Atletas, "Lista_Corredores.txt");
 			break;
 
 		case 6:
@@ -162,17 +170,17 @@ void altaCorredores(TSist_Atletas *atletas)
 		atletas->Corredores[atletas->size].tiempos[5].distancia = 42200;
 
 		printf("Introduce los tiempos del corredor en segundos: \n");
+		
 		for (int i = 0; i < NC; i++)
 		{
 			printf("Tiempo en carrera de %d metros: ", atletas->Corredores[atletas->size].tiempos[i].distancia);
 			scanf("%d", &atletas->Corredores[atletas->size].tiempos[i].segs);
 		}
+
 		(atletas->size)++;
 	}
 	else
-	{
 		printf("\nLista de Atletas Llena...\n");
-	}
 }
 
 /**
@@ -265,9 +273,7 @@ void listadoTiemposByAtleta(TSist_Atletas atletas)
 			free(tiempos); // Libera la memoria cuando ya no se necesite
 		}
 		else
-		{
 			printf("No se encontro a ningun Atleta con el nombre << %s >>", name);
-		}
 	}
 	else
 	{
@@ -288,9 +294,7 @@ int buscarAtleta(TSist_Atletas atletas, cadena name)
 	int posicion = 0;
 
 	while (posicion < atletas.size && strcmp(atletas.Corredores[posicion].name, name) != 0)
-	{
 		posicion++;
-	}
 
 	return posicion;
 }
@@ -387,6 +391,7 @@ void listadoAllAtletas(TSist_Atletas atletas)
 	{
 		printf("\n%-20s%-20s%-20s%-20s\n", "Nombre", "Edad", "Carreras", "Tiempos");
 		printf("-------------------------------------------------------------------");
+		
 		for (int i = 0; i < atletas.size; i++)
 		{
 
@@ -479,9 +484,7 @@ void listadoAtletasByEdad(TSist_Atletas atletas)
 		scanf("%d", &edadMax);
 
 		if (edadMin > edadMax)
-		{
 			printf("\nError...El intervalo de edades no es permitido\n");
-		}
 		else
 		{
 			printf("\n%-20s%-20s%-20s\n", "Nombre", "Edad", "Promedio");
@@ -500,15 +503,96 @@ void listadoAtletasByEdad(TSist_Atletas atletas)
 			}
 
 			if (cont == 0)
-			{
 				printf("\nNo se encotro corredores en el intervalo de edad [%d, %d]\n", edadMin, edadMax);
-			}
-			
-			
 		}
-		
-		
 	}
 	else
 		printf("\nNo hay corredores dados de alta\n");
+}
+
+/**
+ * @brief Da de baja a un corredor, buscado por su nombre
+ * 
+ * @param atletas 
+ */
+void bajasAtletasByNombre(TSist_Atletas *atletas)
+{
+	cadena name;
+	int posicionC;
+
+	printf("\n---------- Bajas Corredores ----------\n");
+
+	if (atletas->size > 0)
+	{
+		printf("\nEscribe el nombre del Corredor: ");
+		getc(stdin);
+		scanf("%[^\n]", name);
+		
+		posicionC = buscarAtleta(*atletas, name);
+
+		if (posicionC < atletas->size)
+		{
+			for (int i = posicionC; i <= (atletas->size) - 2; i++)
+				atletas->Corredores[i] = atletas->Corredores[i + 1];
+
+			(atletas->size)--;
+
+			printf("\nEl corredor <<%s>> fue eliminado...\n", name);
+		}
+		else
+			printf("\nNo se encontro a ningun Atleta con el nombre << %s >>\n", name);
+	}
+	else
+		printf("\nNo hay corredores dados de alta\n");
+}
+
+/**
+ * @brief 
+ * 
+ * @param name 
+ * @param modo 
+ * @return FILE* 
+ */
+FILE *abrirArchivo(cadena name, cadena modo)
+{
+	FILE *ap = NULL;
+
+	ap = fopen(name, modo);
+
+	if (ap == NULL)
+		printf("\nError...No se pudo abrir el archivo\n");
+	else
+		printf("\nArchivo abierto exitosamente\n");
+
+	return ap;	
+}
+
+/**
+ * @brief 
+ * 
+ * @param atletas 
+ * @param name 
+ */
+void crearArchivoTxt(TSist_Atletas atletas, cadena name)
+{
+	FILE *ap;
+
+	ap = abrirArchivo(name, "w");
+
+	if (ap != NULL)
+	{
+		fprintf(ap, "Total de Corredores: ");
+		fprintf(ap, "%d", atletas.size);
+		fprintf(ap, "\n%-20s%-20s%-20s%-20s\n", "Nombre", "Edad", "Carreras", "Tiempos");
+		fprintf(ap, "-------------------------------------------------------------------");
+
+		for (int i = 0; i < atletas.size; i++)
+		{
+			for (int j = 0; j < NC; j++)
+				fprintf(ap, "\n%-20s%-20d%-20d%d\n", atletas.Corredores[i].name, atletas.Corredores[i].edad, atletas.Corredores[i].tiempos[j].distancia, atletas.Corredores[i].tiempos[j].segs);
+		}
+
+		fclose(ap);
+	}
+	
 }
