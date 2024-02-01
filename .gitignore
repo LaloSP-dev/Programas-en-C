@@ -3,6 +3,7 @@
 *.out
 *.exe
 *.exec
+*
 
 #Ignorar archivos
 
