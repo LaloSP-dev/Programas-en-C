@@ -18,6 +18,7 @@
   - [Par o Impar](#par-o-impar)
   - [Multiplos](#multiplo)
   - [Boletos de Avión](#boletos-de-avión)
+  - [Cálculo de áreas de figuras](#cálculo-de-áreas-de-figuras)
 
 ## Objetivo
 
@@ -368,6 +369,32 @@ Total a Pagar: 2400 pesos
 ```
 
 [Solución - Boletos de Avión](Ejercicio%203%20-%20Estructuras%20Condicionales/boletosAvion.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Cálculo de áreas de figuras
+
+#### Objetivo
+Realizar un algoritmo para calcular el área de un triángulo, rectángulo, cuadrado o círculo, según lo desee el usuario.
+
+#### Resultado esperado en consola
+
+```bash
+Selecciona una opción para el cálculo del área
+1) Triángulo
+2) Rectángulo
+3) Cuadrado
+4) Círculo
+Opción: 4
+
+----- Área del Círculo -----
+
+Ingresa la radio: 2
+
+El área del Círculo es: 12.57
+```
+
+[Solución - Cálculo de área](Ejercicio%203%20-%20Estructuras%20Condicionales/areaFiguras.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 

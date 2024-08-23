@@ -2,8 +2,6 @@
  * Programa: Costo de boletos de avion
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que pregunta al usuario la edad de 3 personas que viajarán en avión,
- * luego indica el costo a pagar por cada uno y el monto total
  */
 
 #include <stdio.h>

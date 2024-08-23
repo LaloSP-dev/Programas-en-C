@@ -2,7 +2,6 @@
  * Programa: Par o Impar
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que dice si un numero es PAR o IMPAR
  */
 
 #include <stdio.h>

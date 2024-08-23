@@ -2,8 +2,6 @@
  * Programa: Entrada de datos
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que pide al usuario datos referentes a su nombre, edad, promedio de su escuela,
- * nombre de su escuela y primera letra de su pais, al final se despliega la infromación dada por el usuario.
  */
 
 #include <stdio.h>

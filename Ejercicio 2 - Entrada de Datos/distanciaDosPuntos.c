@@ -2,7 +2,6 @@
  * Programa: Distancia entre dos puntos
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que calcula la distancia entre dos puntos
  */
 
 #include <stdio.h>

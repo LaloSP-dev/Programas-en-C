@@ -2,7 +2,6 @@
  * Programa: Saludo
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que despliega un saludo y mi nombre
  */
 
 #include <stdio.h>

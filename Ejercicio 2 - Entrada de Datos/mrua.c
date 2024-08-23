@@ -2,7 +2,6 @@
  * Programa: Problema de Fisica
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que resuelve un problema de fisica sobre MRUA
  */
 
 #include <stdio.h>

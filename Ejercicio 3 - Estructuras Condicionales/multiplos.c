@@ -2,7 +2,6 @@
  * Programa: Multiplos
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que pide 2 numeros enteros al usuario y diga si un número es multiplo del otro
  */
 
 #include <stdio.h>

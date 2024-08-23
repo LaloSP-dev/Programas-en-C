@@ -2,7 +2,6 @@
  * Programa: Adivinar número pensado por el usuario
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
- * Descripción: Programa que adivina un número pensado por el usuario
  */
 
 #include <stdio.h>

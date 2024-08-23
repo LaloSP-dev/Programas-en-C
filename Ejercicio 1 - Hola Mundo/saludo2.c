@@ -2,7 +2,6 @@
  * Programa: Saludo
  * Autor: Eduardo Sanchez
  * Version: 2.0.0
- * Descripción: Programa que despliega un marco con una bienvenida en el centro del marco
  */
 
 #include <stdio.h>
