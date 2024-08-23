@@ -13,6 +13,7 @@
     - [Entrada de datos](#entrada-de-datos)
     - [Adivinar número](#adivinar-número)
     - [Problema de física](#problema-de-física)
+    - [Distancia entre dos puntos](#distancia-entre-dos-puntos)
 
 
 
@@ -219,3 +220,18 @@ Hacer un programa para calcular la distancia entre dos puntos con coordenadas (x
 Nota: Incluir la librería `<math.h>` para usar las funciones `pow` y `sqrt`:
 - `pow(b,p)`: calcula `b` elevado a la potencia de `p`.
 - `sqrt(x)`:calcula la raíz cuadrada de `x`.
+
+#### Resultado esperado en consola
+```bash
+---------- Distancia Entre Dos Puntos ----------
+
+Introude las coordenadas
+x1 = 5
+x2 = 1
+y1 = 3
+y2 = 1
+
+La distancia entre los puntos es: 4.472136
+```
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
