@@ -12,6 +12,7 @@
  - [Ejercicios 2](#ejercicios-2)
     - [Entrada de datos](#entrada-de-datos)
     - [Adivinar número](#adivinar-número)
+    - [Problema de física](#problema-de-física)
 
 
 
@@ -185,8 +186,36 @@ El numero pensado fue: 7
 
 ### Problema de física
 #### Objetivo
+Haz un programa que resuelva el siguiente problem de física.
+
+`Un avión parte de reposo y debe alcanzar los 80m/s en 50s. ¿Qué distancia debe tener la pista de despegue?`
+
+Fórmula para el cálculo de la distancia:
+
+![Fórmula distancia](assets/img/formula-distancia.png)
+
+Para la aceleración calculada con la ecuación.
+
+![Formula aceleración](assets/img/formula-aceleracion.png)
 
 #### Resultado esperado en consola
 ```bash
+---------- Problema de Fisica ----------
 
+Un avion parte del reposo y debe alcanzar los 80m/s en 50s.
+¿Que distancia debe tener la pista de despegue?
+
+Aceleracion (a) = 1.60 m/s^2
+
+La distancia es = 2000.00 m
 ```
+
+### Distancia entre dos puntos
+#### Objetivo
+Hacer un programa para calcular la distancia entre dos puntos con coordenadas (x1, x2) y (y1, y2). Haciendo uso de la siguiente fórmula:
+
+![Distancia entre dos puntos](assets/img/distancia-puntos.png)
+
+Nota: Incluir la librería `<math.h>` para usar las funciones `pow` y `sqrt`:
+- `pow(b,p)`: calcula `b` elevado a la potencia de `p`.
+- `sqrt(x)`:calcula la raíz cuadrada de `x`.
