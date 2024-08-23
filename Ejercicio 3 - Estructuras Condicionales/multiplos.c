@@ -26,6 +26,8 @@ int main(int argc, char const *argv[])
         else
             printf("\n%d es multiplo de %d\n\n", number2, number1);
     }
+    else
+        printf("\n%d y %d no son multiplos\n\n", number1, number2);
 
     return 0;
 }
