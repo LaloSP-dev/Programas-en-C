@@ -19,6 +19,10 @@
   - [Multiplos](#multiplo)
   - [Boletos de Avión](#boletos-de-avión)
   - [Cálculo de áreas de figuras](#cálculo-de-áreas-de-figuras)
+- [Ejercicios 4 - Estructuras Iterativas](#ejercicios-4---estructuras-iterativas)
+  - [Contador de Números](#contador-de-números)
+- [Extras](#extras)
+  - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
 
 ## Objetivo
 
@@ -375,6 +379,7 @@ Total a Pagar: 2400 pesos
 ### Cálculo de áreas de figuras
 
 #### Objetivo
+
 Realizar un algoritmo para calcular el área de un triángulo, rectángulo, cuadrado o círculo, según lo desee el usuario.
 
 #### Resultado esperado en consola
@@ -395,6 +400,101 @@ El área del Círculo es: 12.57
 ```
 
 [Solución - Cálculo de área](Ejercicio%203%20-%20Estructuras%20Condicionales/areaFiguras.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+## Ejercicios 4 - Estructuras Iterativas
+
+### Contador de Números
+
+#### Objetivo
+
+Hacer un algoritmo que pide varios números enteros al usuario y cuando el usuario da un cero el programa escribe cuántos números dio en total y termina.
+
+#### Resultado esperado en consola
+
+```bash
+---------- Contador de Números ----------
+
+Da varios numeros y para terminar da un 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+
+Diste un total de 9 números
+```
+
+[Solución - Contador de Números](Ejercicio%204%20-%20Estructuras%20Iterativas/contadorNumeros.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+## Extras
+
+### Cálculo del Importe y el IVA
+
+#### Objetivo
+
+Elabora un programa que calcule el total a pagar por pedidos de platillos que realiza un cliente.
+
+1. El usuario deberá solicitar al usuario.
+
+   - Nombre del cliente
+   - Nombre del platillo (sin IVA incluido)
+   - Cantidad
+
+2. El programa deberá.
+
+- Calcular y mostrar el importe
+
+  `importe = precio * cantidad`
+
+- Calcular y mostrar el IVA
+
+  `IVA = importe * 0.16`
+
+- Calcular y mostrar el total a pagar
+
+  `Total a pagar = importe * IVA`
+
+#### Resultado esperado en consola
+
+```bash
+          ********** DATOS DEL ESTUDIANTE **********
+
+Nombre del estudiante: XXXXX XXXXX XXXXX
+Matricula: XXXXXXXXXX
+Grupo: XXXXXX
+
+Ingresa el nombre del cliente: Eduardo
+
+
+          ********** DATOS DEL PEDIDO DE COMIDA **********
+
+Ingrese el nombre del platillo: Pizza
+
+Ingrese el precio del platillo sin IVA: 250
+
+Ingrese la cantidad del platillo: 2
+
+Importe sin IVA: 500.00
+
+IVA: 80.00
+
+          DATOS DEL CLIENTE Y TOTAL A PAGAR CON IVA
+
+Nombre del cliente: Eduardo
+
+Total a pagar del pedidio con IVA: 580.00
+```
+
+[Solución - Cálculo del Importe y el IVA](Extras/Calculo%20importe%20y%20el%20IVA/platillos.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
