@@ -21,6 +21,7 @@
   - [Cálculo de áreas de figuras](#cálculo-de-áreas-de-figuras)
 - [Ejercicios 4 - Estructuras Iterativas](#ejercicios-4---estructuras-iterativas)
   - [Contador de Números](#contador-de-números)
+  - [Contador de números pares e impares](#contador-de-números-pares-e-impares)
 - [Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
 
