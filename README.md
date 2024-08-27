@@ -437,6 +437,77 @@ Diste un total de 9 números
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
+### Contador de números pares e impares
+
+#### Objetivo
+
+Analiza el siguiente pseudocódigo.
+
+```c
+Constante N ← 10
+Algoritmo
+Comienza
+  Entero num,cont, npares, nimpares;
+  npares ← 0;
+  nimpares ← 0;
+  Para cont←1 a N (conpaso + 1) hacer
+  Comienza
+    Escribe( “Ingresa un número positivo: “);
+    Lee(num);
+    Si (num >= 0) entonces
+      Si( num MOD 2 == 0) entonces //es par
+        npares ← npares +1;
+      Otro //es impar
+        nimpares ← nimpares +1;
+    Otro
+    Comienza
+      Escribe(“ El numero “,num,” no es positivo”);
+      cont ← cont -1;
+    Termina
+  Termina
+Termina
+```
+
+El algoritmo le pide al usuario N números enteros positivos y al terminar dice al usuario cuántos fueron pares y cuántos impares.
+Escribe un programa en C codificando el algoritmo presentado.
+
+#### Resultado esperado en consola
+
+```bash
+---------- Contador de números Pares e Impares ----------
+
+Ingresa un número positivo: 1
+
+Ingresa un número positivo: 2
+
+Ingresa un número positivo: 3
+
+Ingresa un número positivo: 4
+
+Ingresa un número positivo: 5
+
+Ingresa un número positivo: -6
+El número -6 no es poditivo
+
+Ingresa un número positivo: 6
+
+Ingresa un número positivo: 7
+
+Ingresa un número positivo: 8
+
+Ingresa un número positivo: 9
+
+Ingresa un número positivo: 10
+
+El numero de numeros pares es: 5
+
+El numero de numeros impares es: 5
+```
+
+[Solución - Par e Impar](Ejercicio%204%20-%20Estructuras%20Iterativas/par-impar.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
 ## Extras
 
 ### Cálculo del Importe y el IVA
