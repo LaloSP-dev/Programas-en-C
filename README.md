@@ -409,7 +409,7 @@ El área del Círculo es: 12.57
 
 #### Objetivo
 
-Hacer un algoritmo que pide varios números enteros al usuario y cuando el usuario da un cero el programa escribe cuántos números dio en total y termina.
+Hacer un algoritmo que pide varios números enteros al usuario y cuando el usuario da un cero el programa escribe cuántos números dio en total y termina. Haciendo uso de `mientras-haz` y `haz-mientras`
 
 #### Resultado esperado en consola
 
@@ -431,7 +431,9 @@ Da varios numeros y para terminar da un 0
 Diste un total de 9 números
 ```
 
-[Solución - Contador de Números](Ejercicio%204%20-%20Estructuras%20Iterativas/contadorNumeros.c)
+[Solución 1 - Contador de Números](Ejercicio%204%20-%20Estructuras%20Iterativas/contadorNumeros.c)
+
+[Solución 2 - Contador de Números](Ejercicio%204%20-%20Estructuras%20Iterativas/contadorNumeros2.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
