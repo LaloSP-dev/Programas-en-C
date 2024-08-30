@@ -22,6 +22,7 @@
 - [Ejercicios 4 - Estructuras Iterativas](#ejercicios-4---estructuras-iterativas)
   - [Contador de Números](#contador-de-números)
   - [Contador de números pares e impares](#contador-de-números-pares-e-impares)
+  - [Divisores de un número](#divisores-de-un-número)
 - [Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
 
@@ -506,6 +507,34 @@ El numero de numeros impares es: 5
 ```
 
 [Solución - Par e Impar](Ejercicio%204%20-%20Estructuras%20Iterativas/par-impar.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Divisores de un número
+
+#### Objetivo
+
+Escribe un programa en C en donde su tarea es desplegar todos los divisores de un número dado por el usuario. Un divisor será el que divide al numero, por lo que todos los divisores se encuentran en el intervalo de 1 a numero.
+
+Por ejemplo, los divisores del número 28 son: 1, 2, 4, 7, 14 y 28.
+
+Usando el tipo de estructura iterativa Repite-Hasta
+
+#### Resultado esperado en consola
+
+```bash
+---------- Divisores de un Número ----------
+
+Ingresa un número entero: 28
+
+Los divisores del numero 28 son:
+1 2 4 7 14 28
+
+El número total de divisores de 28 es: 6
+
+```
+
+[Solución - Divisores de un número](Ejercicio%204%20-%20Estructuras%20Iterativas/divisores.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
