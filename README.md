@@ -25,6 +25,7 @@
   - [Divisores de un número](#divisores-de-un-número)
 - [Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
+  - [Palíndromo](#palíndromo)
 
 ## Objetivo
 
@@ -598,6 +599,36 @@ Total a pagar del pedidio con IVA: 580.00
 ```
 
 [Solución - Cálculo del Importe y el IVA](Extras/Calculo%20importe%20y%20el%20IVA/platillos.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Palíndromo
+
+#### Objetivo
+
+Realizar un código en C donde el usuario introduzca una frase. El algoritmo debe verificar si la frase del usuario es un palíndromo.
+
+#### Resultado esperado en consola
+
+```bash
+---------- Palindromo ----------
+
+Introduce una frase:
+Anita lava la tina
+
+La frase 'Anita lava la tina' es un Palindromo
+```
+
+```bash
+---------- Palindromo ----------
+
+Introduce una frase:
+Hola como estas
+
+La frase 'Hola como estas' no es un Palindromo
+```
+
+[Solución](./Extras/Palindromo/palindromo.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
