@@ -26,6 +26,7 @@
 - [Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palíndromo](#palíndromo)
+  - [Gestión de inventario y ventas de productos](#gestión-de-inventario-y-ventas-de-productos)
 
 ## Objetivo
 
@@ -628,7 +629,121 @@ Hola como estas
 La frase 'Hola como estas' no es un Palindromo
 ```
 
-[Solución](./Extras/Palindromo/palindromo.c)
+[Solución - Palíndromo](./Extras/Palindromo/palindromo.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Gestión de inventario y ventas de productos
+
+#### Objetivo
+
+El programa deberá presentar un menu de la siguiente manera:
+
+El programa debe permitir al usuario realizar las siguientes operaciones.
+
+1. Inicialización de Inventario:
+
+   Deberás definir un inventario inicial de 5 productos con nombres, precios de compra, precios de venta, cantidad disponible (stock) y el valor total del inventario.
+
+   Ejemplo de productos:
+   ![Tabla de productos](assets/img/tabla-producto.png)
+
+2. Menú de opciones:
+
+   ```bash
+   Menú de opciones:
+   1. Mostrar inventario actualizado
+   2. Realizar venta
+   3. Agregar stock a un producto
+   4. Calcular total de ventas al día
+   5. Salir
+
+   Ingrese su opción:
+   ```
+
+3. Mostrar inventario actualizado:
+
+   Mostrar el nombre del producto, precio de venta, cantidad disponible y valor total en inventario.
+
+   `valor total de inventario = precio de venta * cantidad disponible`
+
+   ![Tabla de productos](assets/img/ventas-inventario.png)
+
+4. Realizar venta:
+
+   Permitir al usuario seleccionar un producto para venta. Ingresar la cantidad de unidades a vender y calcular el precio total de la venta. Restar la cantidad vendida del stock disponible.
+
+   `precio total de la venta = precio venta * cantidad de unidades vendidas`
+
+   ```bash
+   ---------- Ventas ----------
+
+    Lista de Productos.
+
+    1. Televisor
+    2. Laptop
+    3. Smartphone
+    4. Tablet
+    5. Camara
+
+    Seleccione el producto a vender: 2
+
+    Ingrese la cantidad de unidades a vender: 2
+
+    Venta realizada exitosamente
+    Monto total: 2400.00
+
+   ```
+
+5. Agregar stock a un producto:
+
+   Permitir al usuario seleccionar un producto para agregar stock, ingresar la cantidad de unidades a agregar y sumar esta cantidad al stock disponible.
+
+   ```bash
+   ---------- Agregar stock a un producto ----------
+
+   Lista de Productos.
+   1. Televisor
+   2. Laptop
+   3. Smartphone
+   4. Tablet
+   5. Camara
+
+   Seleccione el producto a vender: 2
+
+   Ingrese la cantidad de unidades a agregar: 8
+
+   Stock actualizado. Nuevo stock de Laptop: 11
+   ```
+
+6. Calcular total de ventas del día:
+
+   Sumar todos los montos de las ventas realizadas y mostrar el total.
+
+   ```bash
+   ---------- Ventas del dia ----------
+
+   Total de ventas del dia: 2400.00
+   ```
+
+7. Salir:
+
+   Terminar la ejecución del programa
+
+   ```bash
+   Menú de opciones:
+   1. Mostrar inventario actualizado
+   2. Realizar venta
+   3. Agregar stock a un producto
+   4. Calcular total de ventas al día
+   5. Salir
+
+   Ingrese su opción: 5
+
+   ¡Hasta luego!
+   ```
+
+[Solución - Gestion de inventario y ventas](./Extras/Gestión%20de%20inventario%20y%20ventas)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
