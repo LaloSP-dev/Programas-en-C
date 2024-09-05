@@ -1,3 +1,9 @@
+/**
+ * Programa: Palíndromo
+ * Autor: Eduardo Sanchez
+ * Version: 1.0.0
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
