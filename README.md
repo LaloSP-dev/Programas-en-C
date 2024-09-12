@@ -26,7 +26,7 @@
   - [Números Primos](#números-primos)
   - [Figuras](#figuras)
   - [Números de Fibonacci](#números-de-fibonacci)
-- [Extras](#extras)
+- [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palíndromo](#palíndromo)
   - [Gestión de inventario y ventas de productos](#gestión-de-inventario-y-ventas-de-productos)
@@ -628,7 +628,7 @@ n
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
-## Extras
+## Ejercicios Extras
 
 ### Cálculo del Importe y el IVA
 
@@ -687,7 +687,7 @@ Nombre del cliente: Eduardo
 Total a pagar del pedidio con IVA: 580.00
 ```
 
-[Solución - Cálculo del Importe y el IVA](Extras/Calculo%20importe%20y%20el%20IVA/platillos.c)
+[Solución - Cálculo del Importe y el IVA](Ejercicios%20Extras/Calculo%20importe%20y%20el%20IVA/platillos.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
@@ -717,7 +717,7 @@ Hola como estas
 La frase 'Hola como estas' no es un Palindromo
 ```
 
-[Solución - Palíndromo](./Extras/Palindromo/palindromo.c)
+[Solución - Palíndromo](Ejercicios%20Extras/Palindromo/palindromo.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
@@ -831,7 +831,7 @@ El programa debe permitir al usuario realizar las siguientes operaciones.
    ¡Hasta luego!
    ```
 
-[Solución - Gestion de inventario y ventas](./Extras/Gestión%20de%20inventario%20y%20ventas)
+[Solución - Gestion de inventario y ventas](Ejercicios%20Extras/Gestión%20de%20inventario%20y%20ventas)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
