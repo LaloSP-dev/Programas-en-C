@@ -26,6 +26,11 @@
   - [Números Primos](#números-primos)
   - [Figuras](#figuras)
   - [Números de Fibonacci](#números-de-fibonacci)
+- [Ejercicios 5 - Procedimientos y Funciones](#ejercicios-5---procedimientos-y-funciones)
+  - [Cantidad de billetes](#cantidad-de-billetes)
+  - [Máximo Común Divisor](#máximo-común-divisor)
+- [Ejercicios 6 - Manejo de Arreglos unidimensionales y bidimensionales](#ejercicios-6---manejo-de-arreglos-unidimensionales-y-bidimensionales)
+  - [Números Random](#números-random)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palíndromo](#palíndromo)
@@ -625,6 +630,154 @@ n
 ```
 
 [Solución - Números de Fibonacci](Ejercicio%204%20-%20Estructuras%20Iterativas/fibonacci.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+## Ejercicios 5 - Procedimientos y Funciones
+
+### Cantidad de billetes
+
+#### Objetivo
+
+Dada una cantidad de dinero (en pesos) decir cuántos billetes con denominación 1000, 500, 200, 100, 50 y 20 pesos deben darse de tal forma que se entregue la mínima cantidad de billetes y el resto con monedas.
+
+Modulariza el programa definiendo:
+
+Una función que recibe como parámetro una cantidad de dinero y una denominación de billetes (1000, 500, 200, 100, 50 o 20) . El módulo desplegará cuántos billetes de la denominación pasada como parámetro deberá entregar al usuario, luego el módulo devolverá la cantidad de dinero que queda, después de dar dichos billetes.
+Por ejemplo, si el módulo recibe los parámetros 24315 y 1000, desplegará:
+
+“Se entregan 24 billetes de 1000 pesos.”
+
+Y el valor regresado por la función será: 315
+
+Un procedimiento que reciba una cantidad de dinero y despliegue que esa cantidad se regresará en monedas. Por ejemplo, si recibe 8 como parámetro, el módulo desplegará: “Se entregan 8 pesos en monedas.”
+
+#### Resultado esperado en consola
+
+```bash
+Ingresa la cantidad de dinero: 12458
+
+Se entregan 12 billetes de 1000 pesos
+Se entregan 2 billetes de 200 pesos
+Se entrega 1 billete de 50 pesos
+Se entregan 8 pesos en monedas
+
+¿Quieres dar otra cantidad? s/n
+n
+
+¡Adios!
+```
+
+[Solución - Cantidad de Billetes](./Ejercicio%205%20-%20Procedimientos%20y%20funciones/modularizar.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Máximo Común Divisor
+
+#### Objetivo
+
+Escribe una función que reciba dos números enteros, A y B, como parámetros formales y calcule el máximo común divisor de ellos. Realiza los siguientes pasos:
+
+1.  En dicho módulo define dos apuntadores, apA y apB, e inicialízalos con las direcciones de A y B.
+
+2.  Escribe el valor de A, B, &A, &B, apA, apB, *apA, *apB. Para escribir el valor de un apuntador (dirección) utiliza el formato: %p (para desplegar en código hexadecimal)
+
+    - A y B: enteros
+    - &A y &B : direcciones
+    - apA y apB: direcciones *apA y *apB: enteros
+
+3.  Codifica el pseudocódigo visto en clase para el cálculo del MCD, pero realiza el cálculo accesando a A y B únicamente desde sus apuntadores. Asegúrate de que A sea el número mayor y B el menor.
+
+4.  Escribe el módulo main definiendo dos variables (num1 y num2) de tipo entero. Luego pide al usuario que ingrese dos enteros para calcular su MCD, leyendo las variables num1 y num2. Enseguida invoca a la función que calcula el MCD y escribe el resultado.
+
+#### Resultado esperado en consola
+
+```bash
+---------- Máximo Común Divisor ----------
+
+Introduce 2 números enteros
+
+Número 1: 2
+Número 1: 8
+
+Valor de A = 2 B = 8
+
+&A = 0x7ff7b05473ec &B = 0x7ff7b05473e8
+
+apA = 0x7ff7b05473ec apB = 0x7ff7b05473e8
+
+*apA = 2 *apB = 8
+
+El MCD es: 2
+```
+
+[Solución - Máximo Común Divisor](./Ejercicio%205%20-%20Procedimientos%20y%20funciones/mcd.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+## Ejercicios 6 - Manejo de Arreglos unidimensionales y bidimensionales
+
+### Números Random
+
+#### Objetivo
+
+Generar 20 numeros aleatorios y guardar los números dentro de una arreglo.
+
+#### Resultado esperado en consola
+
+```bash
+---------- Números Aleatorios ----------
+82 88 36 27 23 71 23 77 31 19 76 29 63 75 52 47 56 63 10 31
+```
+
+[Solución - Números Random](./Ejercicio%206%20-%20Manejo%20de%20Arreglos/random.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+## Números Random 1.1.0
+
+#### Objetivo
+
+A continuación vamos a modularizar el ejercicio [Números Random](#números-random) de la manera siguiente:
+
+1. Declara un procedimiento `Inicializa Arreglo` que se encarga de inicializar con números aleatorios las celdas (o casillas) de un arreglo y recibe los siguientes parámetros formales:
+
+   ```c
+   void Inicializa_arreglo(int Arreglo[], int size, int max_valor)
+   ```
+
+   El primer parámetro de salida (Arreglo) es el arreglo de enteros que será inicializado. El segundo parámetro (de entrada) indica el tamaño del arreglo Arreglo y el tercer parámetro (también de entrada) indica el máximo valor aleatorio que se asignará a las casillas del arreglo (el mínimo es 0).
+
+2. A continuación declara el tipo cadena (abajo de la declaración de constantes):
+
+   ```c
+   typedef char cadena[256];
+   ```
+
+3. Luego escribe otro procedimiento llamado `Despliega Arreglo` que recibe tres parámetros formales (los tres son parámetros de entrada):
+
+   ```c
+   void Despliega_arreglo( int Arreglo [], int tamanio, cadena mensaje)
+   ```
+
+    El primer parámetro de entrada es el arreglo de enteros a escribir en pantalla. Los elementos del arreglo se separan con un espacio en blanco y sólo al final se salta línea. El segundo parámetro es el tamaño del arreglo y el tercero es un mensaje de encabezado que se debe escribir antes de desplegar los números.
+
+4. Declara otra `constante MAX con valor 10`.
+Modifica el módulo main: declara otro arreglo de enteros (DATOS) de tamaño MAX e invoca a los módulos escritos anteriormente, como se muestra a continuación
+
+#### Resultado esperado en consola
+
+```bash
+---------- Números Aleatorios ----------
+
+Arreglo con valores entre 0 y 100
+31 80 11 77 53 91 12 35 18 42 64 33 4 100 33 0 73 86 33 16 
+
+Arreglo con valores entre 0 y 20
+5 7 3 7 17 2 8 1 0 6 1 14 5 2 15 15 17 15 4 20
+```
+
+[Solución - Números Random 1.1.0](./Ejercicio%206%20-%20Manejo%20de%20Arreglos/random2.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
