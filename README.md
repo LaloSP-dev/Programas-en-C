@@ -731,7 +731,7 @@ Generar 20 numeros aleatorios y guardar los números dentro de una arreglo.
 82 88 36 27 23 71 23 77 31 19 76 29 63 75 52 47 56 63 10 31
 ```
 
-[Solución - Números Random](./Ejercicio%206%20-%20Manejo%20de%20Arreglos/random.c)
+[Solución - Números Random](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/random.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
@@ -778,7 +778,7 @@ Arreglo con valores entre 0 y 20
 5 7 3 7 17 2 8 1 0 6 1 14 5 2 15 15 17 15 4 20
 ```
 
-[Solución - Números Random 1.1.0](./Ejercicio%206%20-%20Manejo%20de%20Arreglos/random2.c)
+[Solución - Números Random 1.1.0](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/random2.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
