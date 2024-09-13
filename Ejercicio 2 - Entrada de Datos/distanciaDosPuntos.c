@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 
     printf("\n---------- Distancia Entre Dos Puntos ----------\n");
     
-    printf("\nIntroude las coordenadas\n");
+    printf("\nIntroduce las coordenadas\n");
 
     printf("x1 = ");
     scanf("%f", &x1);
@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
     printf("y2 = ");
     scanf("%f", &y2);
 
-    // Calculamos la distancia de las cooredenada dadas
+    // Calculamos la distancia de las coordenada dadas
     d = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 
     printf("\nLa distancia entre los puntos es: %f\n\n", d);

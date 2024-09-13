@@ -33,7 +33,7 @@ int main(int argc, char const *argv[])
 
 	} while (!(divisor > number)); /*Hacemos uso del ciclo repite-hasta que en C no existe pero se puede 
                                     implementar usando do-while y negando con el operador ! la condición.
-									Condicion sin negar divisores <= numero*/
+									Condición sin negar divisores <= numero*/
 
     printf("\n\nEl número total de divisores de %d es: %d\n\n", number, cont);
 

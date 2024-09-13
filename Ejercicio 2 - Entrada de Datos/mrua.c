@@ -1,5 +1,5 @@
 /**
- * Programa: Problema de Fisica
+ * Programa: Problema de Física
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
  */
@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     int d0 = 0, vi = 0, vf = 80, t = 50;
     double a, d;
 
-    printf("\n---------- Problema de Fisica ----------\n");
+    printf("\n---------- Problema de Física ----------\n");
 
     printf("\nUn avion parte del reposo y debe alcanzar los 80m/s en 50s.\n");
     printf("¿Que distancia debe tener la pista de despegue?\n");
@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
 
     a = (vf - vi) / (double) t;
 
-    printf("\nAceleracion (a) = %.2lf m/s^2\n\n", a);
+    printf("\nAceleración (a) = %.2lf m/s^2\n\n", a);
 
     /**
      * Fórmula para calcular la distancia

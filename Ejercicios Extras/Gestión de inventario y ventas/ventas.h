@@ -45,7 +45,7 @@ void inicializaInventario(Inventario *inventario)
     (inventario->totalProductos)++;
     agregarProducto(&inventario->infoProducto[inventario->totalProductos], "Tablet", 200.00, 350.00, 15);
     (inventario->totalProductos)++;
-    agregarProducto(&inventario->infoProducto[inventario->totalProductos], "Camara", 250.50, 400.00, 8);
+    agregarProducto(&inventario->infoProducto[inventario->totalProductos], "Cámara", 250.50, 400.00, 8);
     (inventario->totalProductos)++;
 }
 

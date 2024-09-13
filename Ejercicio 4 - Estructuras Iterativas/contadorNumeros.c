@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 
     printf("\n---------- Contador de Números ----------\n");
 
-    printf("\nDa varios numeros y para terminar da un 0\n");
+    printf("\nDa varios números y para terminar da un 0\n");
     scanf("%d", &number);
 
     cont = 0;

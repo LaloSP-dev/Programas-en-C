@@ -64,16 +64,36 @@ void studentData()
     printf("Grupo: XXXXXX\n\n");
 }
 
+/**
+ * @brief Calcula el monto total sin IVA
+ * 
+ * @param price - precio del platillo
+ * @param total - cantidad del platillo
+ * @return - momnto toal
+ */
 float calculateAmount(float price, int total) 
 {
     return price * total;
 }
 
+/**
+ * @brief Calcula el IVA del platillo
+ * 
+ * @param amount - monto total sin IVA
+ * @return - IVA del platillo
+ */
 float calculateIVA(float amount) 
 {
     return amount * TASA;
 }
 
+/**
+ * @brief Calcula el total a pagar con IVA 
+ * 
+ * @param amount - monto sin IVA
+ * @param iva - IVA del platillo
+ * @return  - Total a pagar
+ */
 float calculateTotalPay(float amount, float iva)
 {
     return amount + iva;

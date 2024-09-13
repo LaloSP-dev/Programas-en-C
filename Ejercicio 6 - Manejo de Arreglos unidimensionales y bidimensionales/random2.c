@@ -11,7 +11,7 @@
 #define NUM_ELEMS 20
 #define MAX 10
 
-typedef char cadena[256]; // Se crea un nuevo tipo llmado cadena
+typedef char cadena[256]; // Se crea un nuevo tipo llamado cadena
 
 void inicializaArreglo(int arreglo[], int size, int maxValor);
 void desplegarArreglo(int arreglo[], int size, cadena mensaje);
@@ -43,7 +43,7 @@ void desplegarArreglo(int arreglo[], int size, cadena mensaje)
 {
     printf("%s\n", mensaje);
 
-    // Se despliega el arreglo ya inicializado con numeros aleatorios
+    // Se despliega el arreglo ya inicializado con números aleatorios
     for (int i = 0; i < size; i++)
         printf("%d ", arreglo[i]);
 

@@ -26,18 +26,18 @@ int main(int argc, char const *argv[])
 	printf("\n¿Que edad tienes?\n");
 	scanf("%d", &edad);
 
-	printf("\n¿Que promedio obtuviste en la prepa?\n");
+	printf("\n¿Que promedio obtuviste en la preparatoria?\n");
 	scanf("%f", &promedio);
 
 	printf("\n¿Como se llama tu escuela?\n");
 	getc(stdin);
 	scanf("%[^\n]", escuela);
 
-	printf("\nEscribe la primer letra de tu pais:\n");
+	printf("\nEscribe la primer letra de tu país:\n");
 	getc(stdin);
 	scanf("%c", &letraPais);
 
-	printf("\n%s tienes %d años, estudias en %s y tienes %.2f de promedio, la inicial de tu pais es: %c\n\n", nombre, edad, escuela, promedio, letraPais);
+	printf("\n%s tienes %d años, estudias en %s y tienes %.2f de promedio, la inicial de tu país es: %c\n\n", nombre, edad, escuela, promedio, letraPais);
 
 	return 0;
 }

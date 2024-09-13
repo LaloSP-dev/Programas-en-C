@@ -140,7 +140,7 @@ void realizarVenta(Inventario *inventario)
         }
     }
     else
-        printf("\nNo hay articulos disponibles\n");
+        printf("\nNo hay artículos disponibles\n");
 }
 
 int menuProductos(Inventario inventario)

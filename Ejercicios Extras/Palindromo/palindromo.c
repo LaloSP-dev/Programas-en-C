@@ -1,5 +1,5 @@
 /**
- * Programa: Palíndromo
+ * Programa: Palindromo
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
  */
@@ -17,20 +17,26 @@ bool isPalindromo(cadena phrase);
 
 int main(int argc, char const *argv[])
 {
-    cadena phrase, newphrase;
+    cadena phrase, newPhrase;
 
-    printf("\n---------- Palíndromo ----------\n");
+    printf("\n---------- Palindromo ----------\n");
 
     printf("\nIntroduce una frase:\n");
     scanf("%[^\n]", phrase);
 
-    removeSpaces(phrase, newphrase);
+    removeSpaces(phrase, newPhrase);
 
-    printf("\nLa frase '%s' %s\n\n", phrase, isPalindromo(newphrase) ? "es un Palíndromo" : "no es un Palíndromo");
+    printf("\nLa frase '%s' %s\n\n", phrase, isPalindromo(newPhrase) ? "es un Palindromo" : "no es un Palindromo");
 
     return 0;
 }
 
+/**
+ * @brief Quita los espacios de la cadena original y pone la frase en minúsculas
+ * 
+ * @param originalPhrase - cadena original
+ * @param newPhrase  - cadena sin espacios
+ */
 void removeSpaces(char *originalPhrase, char *newPhrase) 
 {
     int j = 0;

@@ -16,7 +16,7 @@
   - [Distancia entre dos puntos](#distancia-entre-dos-puntos)
 - [Ejercicios 3 - Estructuras Condicionales](#ejercicios-3---estructuras-condicionales)
   - [Par o Impar](#par-o-impar)
-  - [Multiplos](#multiplo)
+  - [Múltiplos](#multiplo)
   - [Boletos de Avión](#boletos-de-avión)
   - [Cálculo de áreas de figuras](#cálculo-de-áreas-de-figuras)
 - [Ejercicios 4 - Estructuras Iterativas](#ejercicios-4---estructuras-iterativas)
@@ -34,14 +34,14 @@
   - [Números Random 1.1.0](#números-random-110)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
-  - [Palíndromo](#palíndromo)
+  - [Palindromo](#palindromo)
   - [Gestión de inventario y ventas de productos](#gestión-de-inventario-y-ventas-de-productos)
 
 ## Objetivo
 
 En este repositorio se encuentran varios ejercicios de programación utilizando el `Lenguaje C`.
 
-El objetivo es que sea usado con fines de estudio, práctica, autoaprendizaje o como guía para todos los programadores que estén aprendiendo C o que ya tengan conocimientos en este lenguaje.
+El objetivo es que sea usado con fines de estudio, práctica, auto aprendizaje o como guía para todos los programadores que estén aprendiendo C o que ya tengan conocimientos en este lenguaje.
 
 El repositorio contiene ejercicios para resolver o consultar código. Se busca que los ejercicios aborden los conceptos básicos del lenguaje, tales como:
 
@@ -139,7 +139,7 @@ Imprimir en pantalla un marco rectangular de 30 espacios de ancho y 9 de alto, u
 
 #### Objetivo
 
-Realizar un programa que pide al usuario datos referentes a su nombre, edad, promedio de su escuela,nombre de su escuela y primera letra de su pais, al final se despliega la infromación dada por el usuario.
+Realizar un programa que pide al usuario datos referentes a su nombre, edad, promedio de su escuela,nombre de su escuela y primera letra de su país, al final se despliega la información dada por el usuario.
 
 #### Resultado esperado en consola
 
@@ -152,16 +152,16 @@ Realizar un programa que pide al usuario datos referentes a su nombre, edad, pro
   ¿Que edad tienes?
   23
 
-  ¿Que promedio obtuviste en la prepa?
+  ¿Que promedio obtuviste en la preparatoria?
   8.89
 
   ¿Como se llama tu escuela?
-  Universidad Autonoma Metropolitana Unidad Iztapalapa
+  Universidad Autónoma Metropolitana Unidad Iztapalapa
 
-  Escribe la primer letra de tu pais:
+  Escribe la primer letra de tu país:
   M
 
-  Eduardo tienes 23 años, estudias en Universidad Autonoma Metropolitana Unidad Iztapalapa y tienes 8.89 de promedio, la inicial de tu pais es: M
+  Eduardo tienes 23 años, estudias en Universidad Autónoma Metropolitana Unidad Iztapalapa y tienes 8.89 de promedio, la inicial de tu país es: M
 ```
 
 [Solución - Entrada de Datos](Ejercicio%202%20-%20Entrada%20de%20Datos/datos.c)
@@ -248,12 +248,12 @@ Para la aceleración calculada con la ecuación.
 #### Resultado esperado en consola
 
 ```bash
----------- Problema de Fisica ----------
+---------- Problema de Física ----------
 
 Un avion parte del reposo y debe alcanzar los 80m/s en 50s.
 ¿Que distancia debe tener la pista de despegue?
 
-Aceleracion (a) = 1.60 m/s^2
+Aceleración (a) = 1.60 m/s^2
 
 La distancia es = 2000.00 m
 ```
@@ -280,7 +280,7 @@ Nota: Incluir la librería `<math.h>` para usar las funciones `pow` y `sqrt`:
 ```bash
 ---------- Distancia Entre Dos Puntos ----------
 
-Introude las coordenadas
+Introduce las coordenadas
 x1 = 5
 x2 = 1
 y1 = 3
@@ -323,11 +323,11 @@ El numero 5 es IMPAR
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
-### Multiplos
+### Múltiplos
 
 #### Objetivo
 
-Hacer un algoritmo para que dados dos enteros ingresados por el usuario, se diga si uno es multiplo del otro.
+Hacer un algoritmo para que dados dos enteros ingresados por el usuario, se diga si uno es múltiplo del otro.
 
 #### Resultado esperado en consola
 
@@ -337,20 +337,20 @@ Ingresa el primer numero: 5
 
 Ingresa el segundo numero: 35
 
-35 es multiplo de 5
+35 es múltiplo de 5
 ```
 
 ```bash
----------- MULTIPLOS ----------
+---------- MÚLTIPLOS ----------
 
 Ingresa el primer numero: 5
 
 Ingresa el segundo numero: 2
 
-5 y 2 no son multiplos
+5 y 2 no son múltiplos
 ```
 
-[Solución - Multiplos](Ejercicio%203%20-%20Estructuras%20Condicionales/multiplos.c)
+[Solución - Múltiplos](Ejercicio%203%20-%20Estructuras%20Condicionales/multiplos.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
@@ -429,7 +429,7 @@ Hacer un algoritmo que pide varios números enteros al usuario y cuando el usuar
 ```bash
 ---------- Contador de Números ----------
 
-Da varios numeros y para terminar da un 0
+Da varios números y para terminar da un 0
 1
 2
 3
@@ -460,18 +460,18 @@ Analiza el siguiente pseudocódigo.
 Constante N ← 10
 Algoritmo
 Comienza
-  Entero num,cont, npares, nimpares;
-  npares ← 0;
-  nimpares ← 0;
-  Para cont←1 a N (conpaso + 1) hacer
+  Entero num,cont, nPares, nImpares;
+  nPares ← 0;
+  nImpares ← 0;
+  Para cont←1 a N (conPaso + 1) hacer
   Comienza
     Escribe( “Ingresa un número positivo: “);
     Lee(num);
     Si (num >= 0) entonces
       Si( num MOD 2 == 0) entonces //es par
-        npares ← npares +1;
+        nPares ← nPares +1;
       Otro //es impar
-        nimpares ← nimpares +1;
+        nImpares ← nImpares +1;
     Otro
     Comienza
       Escribe(“ El numero “,num,” no es positivo”);
@@ -500,7 +500,7 @@ Ingresa un número positivo: 4
 Ingresa un número positivo: 5
 
 Ingresa un número positivo: -6
-El número -6 no es poditivo
+El número -6 no es positivo
 
 Ingresa un número positivo: 6
 
@@ -512,9 +512,9 @@ Ingresa un número positivo: 9
 
 Ingresa un número positivo: 10
 
-El numero de numeros pares es: 5
+El numero de números pares es: 5
 
-El numero de numeros impares es: 5
+El numero de números impares es: 5
 ```
 
 [Solución - Par e Impar](Ejercicio%204%20-%20Estructuras%20Iterativas/par-impar.c)
@@ -553,7 +553,7 @@ El número total de divisores de 28 es: 6
 
 #### Objetivo
 
-Desplejar todos los números mayores deb 50, menores que 1000 y que sean primos.
+Desplegar todos los números mayores deb 50, menores que 1000 y que sean primos.
 
 #### Resultado esperado en consola
 
@@ -611,7 +611,7 @@ Segunda figura
 
 #### Objetivo
 
-Hacer un programa donde se le pida a el usuario un número, el programa debera calcular el número Fibonacci que pertenece el número dado.
+Hacer un programa donde se le pida a el usuario un número, el programa deberá calcular el número Fibonacci que pertenece el número dado.
 
 #### Resultado esperado en consola
 
@@ -642,7 +642,7 @@ n
 
 Dada una cantidad de dinero (en pesos) decir cuántos billetes con denominación 1000, 500, 200, 100, 50 y 20 pesos deben darse de tal forma que se entregue la mínima cantidad de billetes y el resto con monedas.
 
-Modulariza el programa definiendo:
+Modularizar el programa definiendo:
 
 Una función que recibe como parámetro una cantidad de dinero y una denominación de billetes (1000, 500, 200, 100, 50 o 20) . El módulo desplegará cuántos billetes de la denominación pasada como parámetro deberá entregar al usuario, luego el módulo devolverá la cantidad de dinero que queda, después de dar dichos billetes.
 Por ejemplo, si el módulo recibe los parámetros 24315 y 1000, desplegará:
@@ -679,7 +679,7 @@ n
 
 Escribe una función que reciba dos números enteros, A y B, como parámetros formales y calcule el máximo común divisor de ellos. Realiza los siguientes pasos:
 
-1.  En dicho módulo define dos apuntadores, apA y apB, e inicialízalos con las direcciones de A y B.
+1.  En dicho módulo define dos apuntadores, apA y apB, e inicializar con las direcciones de A y B.
 
 2.  Escribe el valor de A, B, &A, &B, apA, apB, *apA, *apB. Para escribir el valor de un apuntador (dirección) utiliza el formato: %p (para desplegar en código hexadecimal)
 
@@ -758,7 +758,7 @@ A continuación vamos a modularizar el ejercicio [Números Random](#números-ran
 3. Luego escribe otro procedimiento llamado `Despliega Arreglo` que recibe tres parámetros formales (los tres son parámetros de entrada):
 
    ```c
-   void Despliega_arreglo( int Arreglo [], int tamanio, cadena mensaje)
+   void Despliega_arreglo( int Arreglo [], int size, cadena mensaje)
    ```
 
     El primer parámetro de entrada es el arreglo de enteros a escribir en pantalla. Los elementos del arreglo se separan con un espacio en blanco y sólo al final se salta línea. El segundo parámetro es el tamaño del arreglo y el tercero es un mensaje de encabezado que se debe escribir antes de desplegar los números.
@@ -838,18 +838,18 @@ IVA: 80.00
 
 Nombre del cliente: Eduardo
 
-Total a pagar del pedidio con IVA: 580.00
+Total a pagar del pedido con IVA: 580.00
 ```
 
 [Solución - Cálculo del Importe y el IVA](Ejercicios%20Extras/Calculo%20importe%20y%20el%20IVA/platillos.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
-### Palíndromo
+### Palindromo
 
 #### Objetivo
 
-Realizar un código en C donde el usuario introduzca una frase. El algoritmo debe verificar si la frase del usuario es un palíndromo.
+Realizar un código en C donde el usuario introduzca una frase. El algoritmo debe verificar si la frase del usuario es un Palindromo.
 
 #### Resultado esperado en consola
 
@@ -871,7 +871,7 @@ Hola como estas
 La frase 'Hola como estas' no es un Palindromo
 ```
 
-[Solución - Palíndromo](Ejercicios%20Extras/Palindromo/palindromo.c)
+[Solución - Palindromo](Ejercicios%20Extras/Palindromo/palindromo.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
@@ -926,7 +926,7 @@ El programa debe permitir al usuario realizar las siguientes operaciones.
     2. Laptop
     3. Smartphone
     4. Tablet
-    5. Camara
+    5. Cámara
 
     Seleccione el producto a vender: 2
 
@@ -949,7 +949,7 @@ El programa debe permitir al usuario realizar las siguientes operaciones.
    2. Laptop
    3. Smartphone
    4. Tablet
-   5. Camara
+   5. Cámara
 
    Seleccione el producto a vender: 2
 
@@ -985,7 +985,7 @@ El programa debe permitir al usuario realizar las siguientes operaciones.
    ¡Hasta luego!
    ```
 
-[Solución - Gestion de inventario y ventas](Ejercicios%20Extras/Gestión%20de%20inventario%20y%20ventas)
+[Solución - Gestión de inventario y ventas](Ejercicios%20Extras/Gestión%20de%20inventario%20y%20ventas)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 

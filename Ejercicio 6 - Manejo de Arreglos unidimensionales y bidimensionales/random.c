@@ -19,9 +19,9 @@ int main(int argc, char const *argv[])
     srand(time(NULL)); // Se genera una nueva semilla por cada ejecución
 
     for (int i = 0; i < NUM_ELEMS; i++)
-        numeros[i] = rand() % 101; // Se aasigna números aleatorios entre 0 y 100
+        numeros[i] = rand() % 101; // Se asigna números aleatorios entre 0 y 100
 
-    // Se despliegan todos los numeros generados
+    // Se despliegan todos los números generados
     for (int i = 0; i < NUM_ELEMS; i++)
         printf("%d ", numeros[i]);
 

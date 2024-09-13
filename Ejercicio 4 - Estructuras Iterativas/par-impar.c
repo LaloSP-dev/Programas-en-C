@@ -33,13 +33,13 @@ int main(int argc, char const *argv[])
          } 
          else 
          {
-            printf("El número %d no es poditivo\n", number);
+            printf("El número %d no es positivo\n", number);
             cont--;
          }
     }
     
-    printf("\nEl numero de numeros pares es: %d\n", nEven);
-	printf("\nEl numero de numeros impares es: %d\n\n", nOdd);
+    printf("\nEl numero de números pares es: %d\n", nEven);
+	printf("\nEl numero de números impares es: %d\n\n", nOdd);
 
     return 0;
 }
