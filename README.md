@@ -31,6 +31,7 @@
   - [Máximo Común Divisor](#máximo-común-divisor)
 - [Ejercicios 6 - Manejo de Arreglos unidimensionales y bidimensionales](#ejercicios-6---manejo-de-arreglos-unidimensionales-y-bidimensionales)
   - [Números Random](#números-random)
+  - [Números Random 1.1.0](#números-random-110)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palíndromo](#palíndromo)
