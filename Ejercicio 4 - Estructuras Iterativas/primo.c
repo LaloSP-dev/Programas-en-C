@@ -1,5 +1,5 @@
 /**
- * Programa: Desplegar los numeros primos que estan entre 50 y 1000
+ * Programa: Desplegar los números primos que estan entre 50 y 1000
  * Autor: Eduardo Sanchez
  * Version: 1.0.0
  */

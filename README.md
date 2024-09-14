@@ -32,6 +32,7 @@
 - [Ejercicios 6 - Manejo de Arreglos unidimensionales y bidimensionales](#ejercicios-6---manejo-de-arreglos-unidimensionales-y-bidimensionales)
   - [Números Random](#números-random)
   - [Números Random 1.1.0](#números-random-110)
+  - [Búsqueda de un Número en un Arreglo](#búsqueda-de-un-número-en-un-arreglo)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palindromo](#palindromo)
@@ -761,10 +762,10 @@ A continuación vamos a modularizar el ejercicio [Números Random](#números-ran
    void Despliega_arreglo( int Arreglo [], int size, cadena mensaje)
    ```
 
-    El primer parámetro de entrada es el arreglo de enteros a escribir en pantalla. Los elementos del arreglo se separan con un espacio en blanco y sólo al final se salta línea. El segundo parámetro es el tamaño del arreglo y el tercero es un mensaje de encabezado que se debe escribir antes de desplegar los números.
+   El primer parámetro de entrada es el arreglo de enteros a escribir en pantalla. Los elementos del arreglo se separan con un espacio en blanco y sólo al final se salta línea. El segundo parámetro es el tamaño del arreglo y el tercero es un mensaje de encabezado que se debe escribir antes de desplegar los números.
 
 4. Declara otra `constante MAX con valor 10`.
-Modifica el módulo main: declara otro arreglo de enteros (DATOS) de tamaño MAX e invoca a los módulos escritos anteriormente, como se muestra a continuación
+   Modifica el módulo main: declara otro arreglo de enteros (DATOS) de tamaño MAX e invoca a los módulos escritos anteriormente, como se muestra a continuación
 
 #### Resultado esperado en consola
 
@@ -772,13 +773,104 @@ Modifica el módulo main: declara otro arreglo de enteros (DATOS) de tamaño MAX
 ---------- Números Aleatorios ----------
 
 Arreglo con valores entre 0 y 100
-31 80 11 77 53 91 12 35 18 42 64 33 4 100 33 0 73 86 33 16 
+31 80 11 77 53 91 12 35 18 42 64 33 4 100 33 0 73 86 33 16
 
 Arreglo con valores entre 0 y 20
 5 7 3 7 17 2 8 1 0 6 1 14 5 2 15 15 17 15 4 20
 ```
 
 [Solución - Números Random 1.1.0](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/random2.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Búsqueda de un Número en un Arreglo
+
+#### Objetivo
+
+1.  Haz un módulo que reciba como parámetro de salida un arreglo de enteros a inicializar, el tamaño del arreglo y un intervalo de valores que aleatoriamente se asignarán a las casillas del arreglo:
+
+    ```c
+    void Inicializa_arreglo(int Arreglo[], int size, int min_valor, int max_valor)
+    ```
+
+    por ejemplo, si queremos que el arreglo se inicialice con valores aleatorios entre 10 y 40, la invocación sería así:
+
+    ```c
+    Inicializa_arreglo(Arreglo, NUM_ELEMS, 10, 40)
+    ```
+
+2.  Haz un módulo que sirva para desplegar los números del arreglo, basándose en lo ejercicios anteriores.
+
+3.  Haz una función que reciba como parámetro de entrada un arreglo de enteros, el tamaño del arreglo y un número entero:
+
+    ```c
+    int Cuenta(int Arreglo[], int size, int num)
+    ```
+
+    el módulo contará cuántas veces aparece el valor de `num` dentro del arreglo.
+
+4.  Haz un procedimiento que reciba como parámetro de entrada un arreglo de enteros, el tamaño del arreglo y un número entero:
+
+    ```c
+    void Despliega_Posiciones (int Arreglo[], int size, int num)
+    ```
+
+    el módulo desplegará las `posiciones` donde el valor de `num` está en el arreglo.
+
+5.  Haz una función que reciba como parámetro de entrada un arreglo de enteros, el tamaño del arreglo y un número entero:
+
+    ```c
+    int Busca(int Arreglo[], int size, int num)
+    ```
+
+    el módulo buscará el valor de `num` en el arreglo y regresará la posición donde aparece por primera vez (la primera ocurrencia de num). Si no aparece, la función regresará el tamaño del arreglo (un índice fuera de rango).
+
+6.  Escribe el módulo main como se muestra a continuación:
+
+    ```c
+    int main()
+    {
+      int Numeros [NUM_ELEMS]; //declaración de arreglo de enteros
+      int elem;
+
+      Inicializa_arreglo (Numeros, NUM_ELEMS, 20,30);
+
+      Despliega_arreglo (Numeros, NUM_ELEMS,”Arreglo con valores entre 20 y 30: ”);
+
+      printf(“Da un numero a buscar en el arreglo: \n”);
+      scanf(“%d”, &elem);
+
+      if ( Busca( Numeros, NUM_ELEMS, elem) < NUM_ELEMS) //si existe
+      {
+        printf(“EL numero %d aparece %d veces en el arreglo\n”, elem, Cuenta(Numeros , NUM_ELEMS, elem));
+
+        Despliega_Posiciones( Numeros, NUM_ELEMS, elem);
+
+        printf(“EL numero %d aparece por primera vez en la posición: %d \n”,elem, Busca( Numeros, NUM_ELEMS, elem);
+      }
+      else printf(“EL numero %d no existe en el arreglo\n”, elem);
+    }
+    ```
+
+#### Resultado esperado en consola
+
+```bash
+Ingresa un número entero: 21
+
+Arreglo con valores entre 10 y 40
+
+16 35 31 28 31 30 35 30 25 17 17 24 17 39 27 14 18 18 11 36 29 22 40 29 39 14 22 18 37 22 16 23 40 18 21 18 23 12 15 34 
+
+
+El número 21 aparece 1 veces en el arreglo
+
+Posiciones donde se encuentra el número 21 son:
+34 
+
+El número 21 aparece por primera vez en la posición: 34
+```
+
+[Solución- Búsqueda de un número](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/search-num.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
