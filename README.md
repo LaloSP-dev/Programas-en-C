@@ -33,6 +33,7 @@
   - [Números Random](#números-random)
   - [Números Random 1.1.0](#números-random-110)
   - [Búsqueda de un Número en un Arreglo](#búsqueda-de-un-número-en-un-arreglo)
+  - [Arreglos Bidimensionales](#arreglos-bidimensionales)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palindromo](#palindromo)
@@ -935,7 +936,7 @@ Declara un módulo que reciba como parámetro un arreglos A de tamaño RENGS x C
   40  50   5  15
 ```
 
-[Solución](url)
+[Solución - Arreglos Bidimensioanles](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/matriz.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
