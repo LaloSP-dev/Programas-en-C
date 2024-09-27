@@ -69,7 +69,7 @@ float rand_float_entre_0_y_1(int num_dec)
  * @brief Despliega los datos del registro
  *
  * -15 -> indica que se debe asignar un ancho de campo de 15 caracteres para el valor
- * El uso del signi '-' indica que el campo debe aliniarse a la izquierda
+ * El uso del signo '-' indica que el campo debe alinearse a la izquierda
  *
  * @param vaca
  */

@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 {
     int numeros[NUM_ELEMS]; // Se declara un arreglo de enteros
 
-    printf("\n---------- Números Aleatorios ----------\n");
+    printf("\n---------- Números Aleatorios ----------");
 
     srand(time(NULL)); // Se genera una nueva semilla por cada ejecución
 

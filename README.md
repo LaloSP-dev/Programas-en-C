@@ -846,7 +846,7 @@ Arreglo con valores entre 0 y 20
 
         Despliega_Posiciones( Numeros, NUM_ELEMS, elem);
 
-        printf(“EL numero %d aparece por primera vez en la posición: %d \n”,elem, Busca( Numeros, NUM_ELEMS, elem);
+        printf(“EL numero %d aparece por primera vez en la posición: %d \n”,elem, Busca(Numeros, NUM_ELEMS, elem));
       }
       else printf(“EL numero %d no existe en el arreglo\n”, elem);
     }
@@ -871,6 +871,71 @@ El número 21 aparece por primera vez en la posición: 34
 ```
 
 [Solución- Búsqueda de un número](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/search-num.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Arreglos Bidimensionales
+
+#### Objetivo
+
+Escribe un programa en C en donde se definan las siguientes constantes:
+
+```c
+RENGS = 5
+COLS = 4
+```
+
+Escribe un procedimiento que recibe como parámetro un arreglo bidimensional de enteros y sus dimensiones, para inicializar todos los elementos del arreglo con números enteros aleatorios en el intervalo de 1 a 10.
+
+```c
+void inicializaMatriz(int matriz[RENGS][COLS])
+```
+
+Escribe un procedimiento para desplegar un arreglo bidimensional recibido como parámetro.
+
+```c
+void despliegaMatriz(int matriz[RENGS][COLS]);
+```
+
+Escribe un módulo main en donde se declaren 2 arreglos de enteros locales bidimensionales: MA y MB de Tamaño RENGS x COLS. Invoca a Inicializa_matriz dos veces para inicializar los arreglos MA y MB con números entre 1 y 10 , luego invoca dos veces a Despliega_matriz para desplegar los dos arreglos.
+
+Declara un módulo que reciba como parámetro tres arreglos A,B yC de tamaño RENGS x COLS. EL objetivo del módulo es sumar las entradas de A y B y guardar el resultado en las entradas de C. Invoca al módulo Despliega_matriz para desplegar el contenido de C después de la suma.
+
+Declara un módulo que reciba como parámetro un arreglos A de tamaño RENGS x COLS y un entero X. EL objetivo del módulo es multiplicar la matriz A por el escalar X, dejando el resultado en A mismo. Invoca al módulo Despliega_matriz para desplegar el contenido de A después de la multiplicación.
+
+#### Resultado esperado en consola
+
+```bash
+--------------------
+   8  10   4   9
+   1   3   5   9
+   4  10   1   6
+   3   3   8   4
+   8  10   1   3
+
+--------------------
+   4  10  10   8
+   1   4  10   9
+   7   6   8   7
+   3   8   1   4
+  10  10  10   2
+
+--------------------
+  12  20  14  17
+   2   7  15  18
+  11  16   9  13
+   6  11   9   8
+  18  20  11   5
+
+--------------------
+  40  50  20  45
+   5  15  25  45
+  20  50   5  30
+  15  15  40  20
+  40  50   5  15
+```
+
+[Solución](url)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 

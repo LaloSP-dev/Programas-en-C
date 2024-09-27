@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
     printf("\nNombre del cliente: %s\n", name);
 
     totalPay = calculateTotalPay(amount, iva);
-    printf("\nTotal a pagar del pedidio con IVA: %.2f\n\n", totalPay);
+    printf("\nTotal a pagar del pedido con IVA: %.2f\n\n", totalPay);
 
     return 0;
 }
@@ -69,7 +69,7 @@ void studentData()
  * 
  * @param price - precio del platillo
  * @param total - cantidad del platillo
- * @return - momnto toal
+ * @return - monto total
  */
 float calculateAmount(float price, int total) 
 {
