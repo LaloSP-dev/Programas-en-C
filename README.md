@@ -1004,7 +1004,7 @@ FILE *openFile(cadena name, cadena type)
 }
 ```
 
-- Crear un método para poder los los nombres de las listas en un archivo de texto (tipo 'txt').
+- Crear un método para poder los  nombres de las listas en un archivo de texto (tipo 'txt').
 - Crear otra función para poder los nombres dentro del archivo de texto.
 
 [Solución - Lista de nombres](./Ejercicio%207%20-%20Manejo%20de%20Archivos/lista-nombres.c)
