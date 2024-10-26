@@ -35,6 +35,7 @@
   - [Búsqueda de un Número en un Arreglo](#búsqueda-de-un-número-en-un-arreglo)
   - [Arreglos Bidimensionales](#arreglos-bidimensionales)
 - [Ejercicios 7 - Manejo de Archivos](#ejercicios-7---manejo-de-archivos)
+  - [Lista de nombres](#lista-de-nombres)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palindromo](#palindromo)
