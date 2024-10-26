@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "accesando",
+        "checar",
+        "decrementarse",
         "getc",
         "Inicialización",
         "Iztapalapa",
@@ -10,6 +12,11 @@
         "Palindromo",
         "pseudocódigo",
         "RENGS",
-        "réstale"
-    ]
+        "réstale",
+        "strcmp",
+        "strcpy"
+    ],
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }

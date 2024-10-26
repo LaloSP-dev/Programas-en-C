@@ -34,6 +34,7 @@
   - [Números Random 1.1.0](#números-random-110)
   - [Búsqueda de un Número en un Arreglo](#búsqueda-de-un-número-en-un-arreglo)
   - [Arreglos Bidimensionales](#arreglos-bidimensionales)
+- [Ejercicios 7 - Manejo de Archivos](#ejercicios-7---manejo-de-archivos)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palindromo](#palindromo)
@@ -724,7 +725,7 @@ El MCD es: 2
 
 #### Objetivo
 
-Generar 20 numeros aleatorios y guardar los números dentro de una arreglo.
+Generar 20 números aleatorios y guardar los números dentro de una arreglo.
 
 #### Resultado esperado en consola
 
@@ -860,13 +861,13 @@ Ingresa un número entero: 21
 
 Arreglo con valores entre 10 y 40
 
-16 35 31 28 31 30 35 30 25 17 17 24 17 39 27 14 18 18 11 36 29 22 40 29 39 14 22 18 37 22 16 23 40 18 21 18 23 12 15 34 
+16 35 31 28 31 30 35 30 25 17 17 24 17 39 27 14 18 18 11 36 29 22 40 29 39 14 22 18 37 22 16 23 40 18 21 18 23 12 15 34
 
 
 El número 21 aparece 1 veces en el arreglo
 
 Posiciones donde se encuentra el número 21 son:
-34 
+34
 
 El número 21 aparece por primera vez en la posición: 34
 ```
@@ -937,6 +938,75 @@ Declara un módulo que reciba como parámetro un arreglos A de tamaño RENGS x C
 ```
 
 [Solución - Arreglos Bidimensioanles](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/matriz.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+## Ejercicios 7 - Manejo de Archivos
+
+### Lista de nombres
+
+#### Objetivo
+
+- Codifica el procedimiento de la opción 1, con los parámetros formales siguientes:
+
+```c
+void Inserta(cadena Nombres[ ], int *size, int tam_max);
+```
+
+este procedimiento primero validará que el arreglo Nombres no esté lleno (cuando `size == tam_max`), en ese caso se pedirá al usuario un nombre y una posición del arreglo donde se insertará el nombre dado. Si la posición dada es mayor o igual que size, el nombre se insertará en la posición indicada por `size` (al final), luego size debe incrementarse en uno.
+En otro caso, si la posición es positiva menor que `size`, el elemento se insertará en la posición indicada recorriendo una casilla a la derecha los elementos a partir de esa posición), luego `size` debe incrementarse en uno.
+En caso de que la posición sea negativa o que el arreglo esté lleno se indicará al usuario el error correspondiente.
+
+- Codifica el procedimiento de la opción 4, con los parámetros formales siguientes:
+
+```c
+void Despliega(cadena Nombres[ ], int size);
+```
+
+este procedimiento desplegará todos los nombres almacenados en el arreglo, incluye un encabezado antes del desplegado. Compila y corre el programa seleccionando varias veces las opciones 1 y 4.
+
+- Codifica el procedimiento de la opción 2, con los parámetros formales siguientes:
+
+```c
+void Elimina(cadena Nombres[ ], int *size);
+```
+
+este procedimiento primero validará que el arreglo `Nombres` no esté vacío (cuando `size` es mayor que 0), en ese caso se pedirá al usuario una posición del arreglo donde se borrará el nombre existente.
+Si la posición es positiva menor que size, el elemento de la posición indicada se eliminará, recorriendo una casilla a la izquierda los elementos a partir de esa posición en adelante, luego size debe decrementarse en uno.
+En caso de que la posición sea negativa o que el arreglo esté vacío se indicará al usuario el error correspondiente. Compila y corre el programa seleccionando varias veces las opciones 1, 2 y 4.
+
+- Codifica la función de la opción 3, con los parámetros formales siguientes:
+
+```c
+int Busca(cadena Nombres[ ], int size, cadena name);
+```
+
+esta función buscará el nombre pasado como parámetro de entrada, name, en el arreglo y regresará la posición donde se encuentra. En caso de que el nombre no se encuentre, se regresará el valor de `size` como posición. Compila y corre el programa seleccionando varias veces las opciones 1, 2, 3, 4 y da 5 para terminar. Nota: usa la función `strcpy(cad1, cad2)` para asignar a `cad1` el valor de `cad2` y la función `strcmp(cad1, cad2)` para checar si dos cadenas son iguales.
+
+- Usa el siguiente código para crear un archivo.
+
+```c
+FILE *openFile(cadena name, cadena type)
+{
+    FILE *ap = NULL;
+
+    ap = fopen(name, type); // Función de C para abrir un archivo
+
+    if (ap == NULL)
+        printf("\nERROR...No se pudo abrir el archivo '%s'\n", name);
+    else
+        printf("\nArchivo '%s' abierto exitosamente\n", name);
+
+    waitToPressEnter();
+
+    return ap;
+}
+```
+
+- Crear un método para poder los los nombres de las listas en un archivo de texto (tipo 'txt').
+- Crear otra función para poder los nombres dentro del archivo de texto.
+
+[Solución - Lista de nombres](./Ejercicio%207%20-%20Manejo%20de%20Archivos/lista-nombres.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
