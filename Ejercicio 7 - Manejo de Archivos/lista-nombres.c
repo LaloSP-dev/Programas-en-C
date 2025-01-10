@@ -245,7 +245,7 @@ void deleteName(cadena *names, int *size)
                     {
                         for (int i = position; i < *size; i++)
                             strcpy(names[i], names[i + 1]);
-                        
+
                         (*size)--;
 
                         printf("\nEl nombre '%s' se elimino exitosamente", nameRemoved);
