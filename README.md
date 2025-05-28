@@ -34,6 +34,7 @@
   - [Números Random 1.1.0](#números-random-110)
   - [Búsqueda de un Número en un Arreglo](#búsqueda-de-un-número-en-un-arreglo)
   - [Arreglos Bidimensionales](#arreglos-bidimensionales)
+  - [Manejo de Arreglos Bidimensionales y Archivos](#manejo-de-arreglos-bidimensionales-y-archivos)
 - [Ejercicios 7 - Manejo de Archivos](#ejercicios-7---manejo-de-archivos)
   - [Lista de nombres](#lista-de-nombres)
 - [Ejercicios Extras](#extras)
@@ -939,6 +940,74 @@ Declara un módulo que reciba como parámetro un arreglos A de tamaño RENGS x C
 ```
 
 [Solución - Arreglos Bidimensioanles](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/matriz.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Manejo de Arreglos Bidimensionales y Archivos
+
+#### Objetivo
+
+Escribe una función siguiente que pide memoria al sistema para crear una matriz de reales `float` de tamaño `rengs x cols`.
+
+```c
+float **crearMatrizFloat(int rengs, int cols);
+```
+
+Luego escribe un procedimiento que genera números aleatorios entre 0 y 1 considerando cifras decimales (`numDecimal`).
+
+```c
+float numeroDecimalRandom(int numDecimal);
+```
+
+Escribe un procedimiento que recibe como parámetro un arreglo bidimensional de reales y sus dimensiones, para inicializar todos los elementos del arreglo con números reales aleatorios en el intervalo [0, 10].
+
+```c
+void inicializaMatrizAleatorio(float **Matriz, int rengs, int cols);
+```
+
+Escribe un procedimiento para desplegar un arreglo bidimensional recibido como parámetro.
+
+```c
+void despliegaMatriz(float **Matriz, int rengs, int cols);
+```
+
+Escribe un modulo `main` que realice los pasos siguientes:
+
+1. Declara un arreglo bidimensional y otro unidimensional para crearse dinámicamente.
+
+2. Declara dos variables enteras: `renglones` y `columnas`.
+
+3. Pregunta al usuario el tamaño (`renglones` y `columnas`) de la matriz a trabajar.
+
+4. Crea la matriz invocando a la función `creaMatrizFloat`.
+
+5. Invoca al módulo `inicializaMatrizAleatorio` para inicializar la matriz creada.
+
+6. Despliega la matriz generada invocando al módulo `despliegaMatriz`.
+
+7. Crea un arreglo de reales de tamaño `renglones` y haz un procedimiento para guardar en cada entrada `i` del arreglo la suma del renglón `i-ésimo` de la matriz, despliega el resultado.
+
+8. Escribe un procedimiento para guardar la matriz en un archivo txt. 
+
+#### Resultado esperado en consola
+
+```bash
+Ingresa el tamaño de los renglones: 3
+Ingresa el tamaño de las columnas: 2
+
+--------------------
+  7.2  9.2
+  8.0  4.0
+  7.2  2.8
+
+
+--------------------
+16.40 12.00 10.00 
+
+Archivo Matriz.txt abierto exitosamente
+```
+
+[Solución - Manejo de Arreglos Bidimensionales y Archivos](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/matriz2.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
