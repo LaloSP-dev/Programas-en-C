@@ -989,6 +989,8 @@ Escribe un modulo `main` que realice los pasos siguientes:
 
 8. Escribe un procedimiento para guardar la matriz en un archivo txt. 
 
+9. Escribe un procedimiento para guardar la matriz en un archivo binario.
+
 #### Resultado esperado en consola
 
 ```bash
@@ -1005,6 +1007,8 @@ Ingresa el tamaño de las columnas: 2
 16.40 12.00 10.00 
 
 Archivo Matriz.txt abierto exitosamente
+
+Archivo Matriz.bin abierto exitosamente
 ```
 
 [Solución - Manejo de Arreglos Bidimensionales y Archivos](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/matriz2.c)
