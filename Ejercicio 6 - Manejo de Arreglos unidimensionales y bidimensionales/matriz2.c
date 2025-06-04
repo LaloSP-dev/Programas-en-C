@@ -12,6 +12,7 @@ void despliegaMatriz(float **Matriz, int rengs, int cols);
 void sumaRenglonesMatriz(float **Matriz, float *Arreglo, int rengs, int cols);
 void desplegarArreglo(float *Arreglo, int rengs);
 void escribeMatrizArchivoTxt(float **Matriz, int rengs, int cols, cadena name);
+void escribeMatrizArchivoBinario(float **Matriz, int rengs, int cols, cadena name);
 
 int main(int argc, char const *argv[])
 {
@@ -36,6 +37,7 @@ int main(int argc, char const *argv[])
     desplegarArreglo(Arreglo, rengs);
 
     escribeMatrizArchivoTxt(Matriz, rengs, cols, "Matriz.txt");
+    escribeMatrizArchivoBinario(Matriz, rengs, cols, "Matriz.bin");
 
     return 0;
 }
@@ -71,6 +73,12 @@ float *creaArregloFloat(int size)
     return apElems;
 }
 
+/**
+ * @brief Genera un número aleatorio entre 0 y 1 
+ * 
+ * @param numDecimal 
+ * @return 
+ */
 float numeroDecimalRandom(int numDecimal)
 {
     float num = 0.0;
@@ -109,6 +117,17 @@ void despliegaMatriz(float **Matriz, int rengs, int cols)
     printf("\n");
 }
 
+/**
+ * @brief Suma de renglones de la Matriz
+ * 
+ * Guarda cada entrada r del arreglo la suma del reglon i-ésimo
+ * de la matriz 
+ * 
+ * @param Matriz 
+ * @param Arreglo 
+ * @param rengs 
+ * @param cols 
+ */
 void sumaRenglonesMatriz(float **Matriz, float *Arreglo, int rengs, int cols)
 {
     for (int r = 0; r < rengs; r++) {
@@ -166,4 +185,20 @@ void escribeMatrizArchivoTxt(float **Matriz, int rengs, int cols, cadena name)
     }
 
     fclose(ap);
+}
+
+void escribeMatrizArchivoBinario(float **Matriz, int rengs, int cols, cadena name) 
+{
+    FILE *ap;
+
+    ap = abreArchivo(name, "wb");
+
+    if (ap != NULL)
+    {
+        fwrite(&rengs, sizeof(int), 1, ap);
+        fwrite(&cols, sizeof(int), 1, ap);
+        fwrite(*Matriz, sizeof(float), rengs * cols, ap);
+
+        fclose(ap);
+    }
 }
