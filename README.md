@@ -37,6 +37,7 @@
 - [Ejercicios 7 - Manejo de Archivos](#ejercicios-7---manejo-de-archivos)
   - [Lista de nombres](#lista-de-nombres)
   - [Manejo de Arreglos Bidimensionales y Archivos](#manejo-de-arreglos-bidimensionales-y-archivos)
+  - [Lectura de Archivos](#lectura-de-archivos)
 - [Ejercicios Extras](#extras)
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palindromo](#palindromo)
@@ -1081,6 +1082,39 @@ Archivo Matriz.bin abierto exitosamente
 ```
 
 [Solución - Manejo de Arreglos Bidimensionales y Archivos](./Ejercicio%206%20-%20Manejo%20de%20Arreglos%20unidimensionales%20y%20bidimensionales/matriz2.c)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### Lectura de Archivos
+
+#### Objetivo
+
+Escribir dos funciones para lectura de los archivos de texto y binario creados en el ejercicio pasado.
+
+#### Resultado esperado en consola
+
+```bash
+Archivo Matriz.txt abierto exitosamente
+
+-------------------------------
+  6.4   2.1   4.0 
+
+  4.4   4.1   2.4 
+
+  3.5   3.6   1.0 
+
+
+Archivo Matriz.bin abierto exitosamente
+
+-------------------------------
+  6.4   2.1   4.0 
+
+  4.4   4.1   2.4 
+
+  3.5   3.6   1.0 
+```
+
+[Solución - Lectura de Archivos](./Ejercicio%207%20-%20Manejo%20de%20Archivos/leer-matriz.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
