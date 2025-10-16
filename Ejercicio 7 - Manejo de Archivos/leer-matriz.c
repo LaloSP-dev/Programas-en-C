@@ -94,6 +94,13 @@ FILE *abrirArchivo(cadena name, cadena modo)
     return ap;
 }
 
+/**
+ * @brief Lee un archivo de texto
+ * @param rengs 
+ * @param cols 
+ * @param name 
+ * @return 
+ */
 float **leerMatrizArchivoTxt(int *rengs, int *cols, cadena name)
 {
     FILE *ap;
@@ -118,6 +125,13 @@ float **leerMatrizArchivoTxt(int *rengs, int *cols, cadena name)
     return Matriz;
 }
 
+/**
+ * @brief Lee un archivo binario
+ * @param rengs 
+ * @param cols 
+ * @param name 
+ * @return 
+ */
 float **leerMatrizArchivoBinario(int *rengs, int *cols, cadena name)
 {
     FILE *ap;
