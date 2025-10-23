@@ -42,6 +42,7 @@
   - [Cálculo de importe y el IVA](#cálculo-del-importe-y-el-iva)
   - [Palindromo](#palindromo)
   - [Gestión de inventario y ventas de productos](#gestión-de-inventario-y-ventas-de-productos)
+  - [Isogramas](#isograma)
 
 ## Objetivo
 
@@ -1322,6 +1323,41 @@ El programa debe permitir al usuario realizar las siguientes operaciones.
    ```
 
 [Solución - Gestión de inventario y ventas](Ejercicios%20Extras/Gestión%20de%20inventario%20y%20ventas)
+
+[Volver a la Tabla de Contenido](#tabla-de-contenido)
+
+### ISOGRAMA
+
+#### Objetivo
+
+Determinar si una palabra o frase es un isograma.
+
+Un isograma (también conocido como "palabra sin patrón") es una palabra o frase sin una letra repetida; sin embargo, se permiten espacios y guiones varias veces.
+
+Ejemplos de isogramas:
+
+* lumberjacks
+* background
+* downstream
+* six-year-old
+
+#### Resultado esperado en consola
+
+```bash
+---------- ISOGRAMAS ----------
+
+Introduce una frase: hola
+
+ES UN ISOGRAMA
+
+---------- ISOGRAMAS ----------
+
+Introduce una frase: frases
+
+NO ES UN ISOGRAMA
+```
+
+[Solución](./Ejercicios%20Extras/isograma.c)
 
 [Volver a la Tabla de Contenido](#tabla-de-contenido)
 
