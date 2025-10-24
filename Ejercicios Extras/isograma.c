@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 typedef char cadena[256];
 
@@ -16,8 +17,8 @@ int main(int argc, char const *argv[])
         printf("\n---------- ISOGRAMAS ----------\n");
 
         printf("\nIntroduce una frase: ");
-        getc(stdin);
-        scanf("%[^\n]", frase);
+        fgets(frase, sizeof(frase), stdin);
+        frase[strcspn(frase, "\n")] = '\0';
 
         if (strcmp("n", frase) == 0)
             break;
@@ -35,18 +36,22 @@ int main(int argc, char const *argv[])
  */
 bool isIsograma(cadena frase)
 {
-    int longuitud = strlen(frase);
-    int letras[256] = {0}; // Almacena las letras que ya hemos encontrado
+    bool seen['z' - 'a' + 1] = {false}; // Almacena las letras que ya hemos encontrado
+    cadena newfrase;
+    size_t i = 0;
 
-    for (int i = 0; i < longuitud; i++)
+    if (!frase)
+        return false;
+
+    char c;
+
+    while ((c = tolower(frase[i++])))
     {
-        int valorLetra = frase[i]; // Obtiene el valor ascii de la letra
-
-        // verifica que la letra ha sido encontrada
-        if (valorLetra != 32 && valorLetra != 45 && letras[valorLetra] > 0)
-            return false;
-
-        letras[valorLetra]++; // Marca la letra como encontrada
+        if (isalpha(c)) // Verifica si es una letra del alfabeto
+            if (seen[c - 'a']) // Busca si esta repetida
+                return false;
+            
+            seen[c - 'a'] = true; // Primera vez que aparece
     }
 
     return true;
