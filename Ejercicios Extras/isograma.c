@@ -37,7 +37,6 @@ int main(int argc, char const *argv[])
 bool isIsograma(cadena frase)
 {
     bool seen['z' - 'a' + 1] = {false}; // Almacena las letras que ya hemos encontrado
-    cadena newfrase;
     size_t i = 0;
 
     if (!frase)
