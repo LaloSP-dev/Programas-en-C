@@ -21,6 +21,7 @@ float generadorDecimales(int numDecimales);
 void despliegaRegistroVaca(TipoVaca vaca);
 void inicializaRegsitrosGanado(TipoVaca *vacas);
 void despliegaResgistrosGanado(TipoVaca *ganado);
+void ordenamientoArregloNombre(TipoVaca *vacas, int size);
 
 int main(int argc, char const *argv[])
 {
@@ -29,6 +30,8 @@ int main(int argc, char const *argv[])
     srand(time(NULL)); 
 
     inicializaRegsitrosGanado(ganado);
+    despliegaResgistrosGanado(ganado);
+    ordenamientoArregloNombre(ganado, MAX_VACAS);
     despliegaResgistrosGanado(ganado);
 
     return 0;
@@ -108,4 +111,20 @@ void despliegaResgistrosGanado(TipoVaca *ganado)
         despliegaRegistroVaca(ganado[i]);
     
     printf("\n");
+}
+
+void ordenamientoArregloNombre(TipoVaca *vacas, int size)
+{
+    TipoVaca aux;
+
+    for (int i = 0; i < size - 1; i++)
+        for (int base = 0; base < size - 1; base++)
+        {
+            if (strcmp(vacas[base].nombre, vacas[base + 1].nombre) > 0)
+            {
+                aux = vacas[base];
+                vacas[base] = vacas[base + 1];
+                vacas[base + 1] = aux;
+            }
+        }
 }
