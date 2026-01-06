@@ -38,8 +38,8 @@ typedef struct
 
 int menu();
 void altaCorredores(TSist_Atletas *Atletas);
-int menuConsultas();
-int menuDistanciaCarreras();
+int queriesMenu();
+int raceDistanceMenu();
 void despliegueConsultas(TSist_Atletas atletas);
 void atletaMejorTiempo(TSist_Atletas atletas);
 void listadoTiemposByAtleta(TSist_Atletas atletas);

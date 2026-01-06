@@ -22,7 +22,7 @@ typedef struct
 {
     cadena nombre;
     unsigned int edad;
-    Tcarrera carreras[NC]
+    Tcarrera carreras[NC];
 } Tcorredor;
 
 typedef struct
@@ -32,7 +32,7 @@ typedef struct
 } TSistAtletas;
 
 int menu();
-int menuConsultas();
-int menuDistanciaCarreras();
+int queriesMenu();
+int raceDistanceMenu();
 
 #endif

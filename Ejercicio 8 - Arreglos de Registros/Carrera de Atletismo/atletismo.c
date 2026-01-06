@@ -20,6 +20,7 @@ int main(int argc, char const *argv[])
             break;
 
         case 3:
+            queriesMenu();
             break;
 
         case 4:
@@ -29,10 +30,11 @@ int main(int argc, char const *argv[])
             break;
 
         case 6:
-            printf("\nFin del programa...Adios!\n");
+            printf("\nFin del programa...Adios!\n\n");
             break;
 
         default:
+            printf("\nOpción no valida...\nSelecciona otra opción\n\n");
             break;
         }
     } while (option != 6);
@@ -57,7 +59,7 @@ int menu()
     return option;
 }
 
-int menuConsultas()
+int queriesMenu()
 {
     int option;
 
@@ -74,7 +76,12 @@ int menuConsultas()
     return option;
 }
 
-int menuDistanciaCarreras()
+void displeyaQueriesMenu()
+{
+
+}
+
+int raceDistanceMenu()
 {
     int option;
 

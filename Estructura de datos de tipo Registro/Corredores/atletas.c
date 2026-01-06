@@ -67,7 +67,7 @@ int menu()
 	return opc;
 }
 
-int menuConsultas()
+int queriesMenu()
 {
 	int opc;
 
@@ -84,7 +84,7 @@ int menuConsultas()
 	return opc;
 }
 
-int menuDistanciaCarreras()
+int raceDistanceMenu()
 {
 	int opc;
 
@@ -108,7 +108,7 @@ void despliegueConsultas(TSist_Atletas atletas)
 
 	do
 	{
-		opcion = menuConsultas();
+		opcion = queriesMenu();
 
 		switch (opcion)
 		{
@@ -207,7 +207,7 @@ void atletaMejorTiempo(TSist_Atletas atletas)
 	{
 		do
 		{
-			distanciaC = menuDistanciaCarreras();
+			distanciaC = raceDistanceMenu();
 			posicionMejorT = 0;
 
 			if (distanciaC > 0 && distanciaC <= 6)
