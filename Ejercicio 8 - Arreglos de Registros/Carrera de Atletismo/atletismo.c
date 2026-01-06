@@ -2,6 +2,40 @@
 
 int main(int argc, char const *argv[])
 {
+    TSistAtletas atletas;
+    int option;
+
+    option = 0;
+
+    do
+    {
+        option = menu();
+
+        switch (option)
+        {
+        case 1:
+            break;
+
+        case 2:
+            break;
+
+        case 3:
+            break;
+
+        case 4:
+            break;
+
+        case 5:
+            break;
+
+        case 6:
+            printf("\nFin del programa...Adios!\n");
+            break;
+
+        default:
+            break;
+        }
+    } while (option != 6);
 
     return 0;
 }
@@ -16,6 +50,7 @@ int menu()
     printf("3) Consultas\n");
     printf("4) Guardar datos en archivos\n");
     printf("5) Cargar datos en archivos\n");
+    printf("6) Salir\n");
     printf("Selecciona una opción: ");
     scanf("%d", &option);
 
