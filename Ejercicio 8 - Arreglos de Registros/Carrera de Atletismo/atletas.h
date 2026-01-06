@@ -33,6 +33,8 @@ typedef struct
 
 int menu();
 int queriesMenu();
+void displeyaQueriesMenu();
 int raceDistanceMenu();
+void waitToPressEnter();
 
 #endif

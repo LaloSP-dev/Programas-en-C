@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
             break;
 
         case 3:
-            queriesMenu();
+            displeyaQueriesMenu();
             break;
 
         case 4:
@@ -78,7 +78,41 @@ int queriesMenu()
 
 void displeyaQueriesMenu()
 {
+    int option;
 
+    option = 0;
+
+    do
+    {
+        option = queriesMenu();
+
+        switch (option)
+        {
+        case 1:
+            break;
+        
+        case 2:
+            break;
+            
+        case 3:
+            break;
+
+        case 4:
+            break;
+
+        case 5:
+            break;
+
+        case 6:
+            printf("\nRegresando al menú principal\n");
+            waitToPressEnter();
+            break;
+
+        default:
+            break;
+        }
+    } while (option != 6);
+    
 }
 
 int raceDistanceMenu()
@@ -96,4 +130,14 @@ int raceDistanceMenu()
     scanf("%d", &option);
 
     return option;
+}
+
+/**
+ * @brief Método que espera que el usuario presione 'Enter'
+ */
+void waitToPressEnter()
+{
+    printf("\nPresione 'Enter' para continuar...");
+    getchar(); // Consumir el salto de linea previo
+    getchar(); // Esperar a que el usuario presione 'Enter'
 }
